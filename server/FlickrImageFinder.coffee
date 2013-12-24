@@ -3,8 +3,10 @@ _ = require("underscore")._
 util = require("util")
 
 class FlickrImageFinder
+  constructor: (@apiKey, @size) ->
+
   findImages: (success, error) =>
-    url = "http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=0c147ab9170b0e96b3aea305f28695a5&bbox=50%2C12%2C51%2C13&format=json&nojsoncallback=1"
+    url = util.format("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%s&bbox=50%2C12%2C51%2C13&format=json&nojsoncallback=1", @apiKey)
     HTTP.request(url).then(
       (result) =>
         console.log("Status: %s", result.status)
@@ -28,7 +30,7 @@ class FlickrImageFinder
 
     _.map(flickrSearchJson.photos.photo, (p) =>
       {
-        href: util.format("http://farm%s.staticflickr.com/%s/%s_%s_c.jpg", p.farm, p.server, p.id, p.secret)
+        href: util.format("http://farm%s.staticflickr.com/%s/%s_%s_%s.jpg", p.farm, p.server, p.id, p.secret, @size)
       }
     )
 

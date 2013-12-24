@@ -10,7 +10,9 @@
   util = require("util");
 
   FlickrImageFinder = (function() {
-    function FlickrImageFinder() {
+    function FlickrImageFinder(apiKey, size) {
+      this.apiKey = apiKey;
+      this.size = size;
       this._convertToImageResult = __bind(this._convertToImageResult, this);
       this._parseResponse = __bind(this._parseResponse, this);
       this.findImages = __bind(this.findImages, this);
@@ -19,7 +21,7 @@
     FlickrImageFinder.prototype.findImages = function(success, error) {
       var url,
         _this = this;
-      url = "http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=0c147ab9170b0e96b3aea305f28695a5&bbox=50%2C12%2C51%2C13&format=json&nojsoncallback=1";
+      url = util.format("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%s&bbox=50%2C12%2C51%2C13&format=json&nojsoncallback=1", this.apiKey);
       return HTTP.request(url).then(function(result) {
         console.log("Status: %s", result.status);
         if (result.status === 200) {
@@ -42,7 +44,7 @@
       var _this = this;
       return _.map(flickrSearchJson.photos.photo, function(p) {
         return {
-          href: util.format("http://farm%s.staticflickr.com/%s/%s_%s_c.jpg", p.farm, p.server, p.id, p.secret)
+          href: util.format("http://farm%s.staticflickr.com/%s/%s_%s_%s.jpg", p.farm, p.server, p.id, p.secret, _this.size)
         };
       });
     };

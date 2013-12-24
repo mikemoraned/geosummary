@@ -24,7 +24,7 @@ app.get('/', (req, resp) ->
 )
 
 FlickrImageFinder = require("./server/FlickrImageFinder")
-imageFinder = new FlickrImageFinder()
+imageFinder = new FlickrImageFinder("0c147ab9170b0e96b3aea305f28695a5", "c")
 
 app.get('/images/:geohash', (req, resp) ->
   imageFinder.findImages(

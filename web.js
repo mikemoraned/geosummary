@@ -25,7 +25,7 @@
 
   FlickrImageFinder = require("./server/FlickrImageFinder");
 
-  imageFinder = new FlickrImageFinder("0c147ab9170b0e96b3aea305f28695a5", "c");
+  imageFinder = new FlickrImageFinder(process.env['FLICKR_API_KEY'], "c");
 
   app.get('/images/:geohash', function(req, resp) {
     var _this = this;
@@ -36,6 +36,7 @@
         'result': result
       });
     }, function() {
+      console.log("Error");
       return resp.sendStatus(404);
     });
   });

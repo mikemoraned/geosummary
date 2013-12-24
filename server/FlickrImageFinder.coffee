@@ -14,7 +14,12 @@ class FlickrImageFinder
           @_parseResponse(result.body, success, error)
         else
           error()
-      , error)
+      ,
+      (e) =>
+        console.log("Error in call")
+        console.dir(e)
+        error()
+      )
 
   _parseResponse: (io, success, error) =>
     console.log("Will parse response")
@@ -28,10 +33,14 @@ class FlickrImageFinder
     # format: http://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}_[mstzb].jpg
     # (see http://www.flickr.com/services/api/misc.urls.html)
 
-    _.map(flickrSearchJson.photos.photo, (p) =>
-      {
-        href: util.format("http://farm%s.staticflickr.com/%s/%s_%s_%s.jpg", p.farm, p.server, p.id, p.secret, @size)
-      }
-    )
+    if flickrSearchJson.photos?.photo?
+      _.map(flickrSearchJson.photos.photo, (p) =>
+        {
+          href: util.format("http://farm%s.staticflickr.com/%s/%s_%s_%s.jpg", p.farm, p.server, p.id, p.secret, @size)
+        }
+      )
+    else
+      console.dir(flickrSearchJson)
+      {}
 
 module.exports = FlickrImageFinder

@@ -29,7 +29,11 @@
         } else {
           return error();
         }
-      }, error);
+      }, function(e) {
+        console.log("Error in call");
+        console.dir(e);
+        return error();
+      });
     };
 
     FlickrImageFinder.prototype._parseResponse = function(io, success, error) {
@@ -41,12 +45,18 @@
     };
 
     FlickrImageFinder.prototype._convertToImageResult = function(flickrSearchJson) {
-      var _this = this;
-      return _.map(flickrSearchJson.photos.photo, function(p) {
-        return {
-          href: util.format("http://farm%s.staticflickr.com/%s/%s_%s_%s.jpg", p.farm, p.server, p.id, p.secret, _this.size)
-        };
-      });
+      var _ref,
+        _this = this;
+      if (((_ref = flickrSearchJson.photos) != null ? _ref.photo : void 0) != null) {
+        return _.map(flickrSearchJson.photos.photo, function(p) {
+          return {
+            href: util.format("http://farm%s.staticflickr.com/%s/%s_%s_%s.jpg", p.farm, p.server, p.id, p.secret, _this.size)
+          };
+        });
+      } else {
+        console.dir(flickrSearchJson);
+        return {};
+      }
     };
 
     return FlickrImageFinder;

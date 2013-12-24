@@ -8,6 +8,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.coffee" afterPath="$PROJECT_DIR$/web.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.js" afterPath="$PROJECT_DIR$/web.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.map" afterPath="$PROJECT_DIR$/web.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="geosummary.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,21 +58,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.coffee" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="web.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="74" selection-start="827" selection-end="827" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
+            <state line="26" column="63" selection-start="802" selection-end="816" vertical-scroll-proportion="0.43093923" vertical-offset="0" max-vertical-offset="905">
               <folding>
-                <marker date="1387891786000" expanded="true" signature="464:672" placeholder="..." />
+                <marker date="1387892341000" expanded="true" signature="464:672" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FlickrImageFinder.coffee" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="FlickrImageFinder.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="0" selection-start="752" selection-end="752" vertical-scroll-proportion="0.41436464" vertical-offset="0" max-vertical-offset="905">
+            <state line="42" column="34" selection-start="1322" selection-end="1322" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
               <folding />
             </state>
           </provider>
@@ -301,7 +302,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="8" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
           <folding>
-            <marker date="1387891786000" expanded="true" signature="464:672" placeholder="..." />
+            <marker date="1387892341000" expanded="true" signature="464:672" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -327,19 +328,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web.coffee">
+    <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="74" selection-start="827" selection-end="827" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
-          <folding>
-            <marker date="1387891786000" expanded="true" signature="464:672" placeholder="..." />
-          </folding>
+        <state line="42" column="34" selection-start="1322" selection-end="1322" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.coffee">
+    <entry file="file://$PROJECT_DIR$/web.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="752" selection-end="752" vertical-scroll-proportion="0.41436464" vertical-offset="0" max-vertical-offset="905">
-          <folding />
+        <state line="26" column="63" selection-start="802" selection-end="816" vertical-scroll-proportion="0.43093923" vertical-offset="0" max-vertical-offset="905">
+          <folding>
+            <marker date="1387892341000" expanded="true" signature="464:672" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

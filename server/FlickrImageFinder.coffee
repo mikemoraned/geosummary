@@ -1,4 +1,6 @@
 HTTP = require("q-io/http")
+_ = require("underscore")._
+util = require("util")
 
 class FlickrImageFinder
   findImages: (success, error) =>
@@ -15,9 +17,19 @@ class FlickrImageFinder
   _parseResponse: (io, success, error) =>
     console.log("Will parse response")
     io.read().then(
-      (s) => success(JSON.parse(s))
+      (s) => success(@_convertToImageResult(JSON.parse(s)))
       ,
       error
+    )
+
+  _convertToImageResult: (flickrSearchJson) =>
+    # format: http://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}_[mstzb].jpg
+    # (see http://www.flickr.com/services/api/misc.urls.html)
+
+    _.map(flickrSearchJson.photos.photo, (p) =>
+      {
+        href: util.format("http://farm%s.staticflickr.com/%s/%s_%s_c.jpg", p.farm, p.server, p.id, p.secret)
+      }
     )
 
 module.exports = FlickrImageFinder

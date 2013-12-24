@@ -11,16 +11,20 @@ app.all('*', (req, resp, next) ->
   next()
 )
 
-# inline home page
-thisPackage = require("./package.json")
+# views
+consolidate = require('consolidate')
+app.engine('html', consolidate.mustache)
+app.set('view engine', 'html')
+app.set('views', __dirname + '/views')
+
+# static, loaded client-side
+app.use(express.static(__dirname + '/client'));
+
+# home page
 app.get('/', (req, resp) ->
-  resp.send("""
-              <!doctype html>
-              <html lang=en>
-              <meta charset=utf-8>
-              <h1>GeoSummary version #{thisPackage.version}</h1>
-              For info, see: <a href="https://github.com/mikemoraned/geosummary">geosummary</a> on github.
-              """)
+  resp.render("index", {
+    thisPackage: require("./package.json")
+  })
 )
 
 FlickrImageFinder = require("./server/FlickrImageFinder")

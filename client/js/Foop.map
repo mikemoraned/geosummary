@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "Foop.js",
+  "sourceRoot": "",
+  "sources": [
+    "Foop.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;CAAA,GAAA,EAAA;;CAAA,CAAM;CACS,EAAA,CAAA,UAAA;CACX,EAAA,GAAA,CAAO,CAAP;CADF,IAAa;;CAAb;;CADF;;CAAA,CAIA,CAAc,CAAd,EAAM;CAJN"
+}

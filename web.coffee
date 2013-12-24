@@ -11,11 +11,14 @@ app.all('*', (req, resp, next) ->
   next()
 )
 
-# views, static
+# views
 consolidate = require('consolidate')
 app.engine('html', consolidate.mustache)
 app.set('view engine', 'html')
 app.set('views', __dirname + '/views')
+
+# static, loaded client-side
+app.use(express.static(__dirname + '/client'));
 
 # home page
 app.get('/', (req, resp) ->

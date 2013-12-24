@@ -25,6 +25,8 @@
 
   app.set('views', __dirname + '/views');
 
+  app.use(express["static"](__dirname + '/client'));
+
   app.get('/', function(req, resp) {
     return resp.render("index", {
       thisPackage: require("./package.json")

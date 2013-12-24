@@ -23,10 +23,22 @@ app.get('/', (req, resp) ->
               """)
 )
 
+FlickrImageFinder = require("./server/FlickrImageFinder")
+imageFinder = new FlickrImageFinder(process.env['FLICKR_API_KEY'], "c")
+
 app.get('/images/:geohash', (req, resp) ->
-  resp.send({
-    'geohash' : req.params.geohash
-  })
+  imageFinder.findImages(
+    (result) =>
+      console.dir(result)
+      resp.send({
+        'geohash' : req.params.geohash,
+        'result' : result
+      })
+    ,
+    () ->
+      console.log("Error")
+      resp.sendStatus(404)
+  )
 )
 
 port = process.env.PORT || 9000

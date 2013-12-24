@@ -1,0 +1,33 @@
+{
+  "name": "geosummary",
+  "description": "geosummary",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.x",
+    "logfmt": "~0.18.1"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "main": "web.js",
+  "devDependencies": {
+
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikemoraned/geosummary.git"
+  },
+  "keywords": [
+    "geo"
+  ],
+  "author": "mike@houseofmoran.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikemoraned/geosummary/issues"
+  },
+  "homepage": "https://github.com/mikemoraned/geosummary"
+}

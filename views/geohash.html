@@ -4,7 +4,7 @@
 <title>GeoSummary version {{thisPackage.version}}</title>
 
 <style type="text/css">
-    .sample {
+    .sample, .navigation {
         float: left;
         width: 320px;
         height: 400px;
@@ -14,12 +14,13 @@
     .sample .attribution {
         text-align: right;
     }
+
 </style>
 
-<div data-bind="with: navigation">
+<div class="navigation" data-bind="with: navigation">
     <table data-bind="foreach: down.values">
-        <tr>
-           <td>Foop</td>
+        <tr data-bind="foreach: $data">
+           <td><a data-bind="attr: { href: href }, text: name"></a></td>
         </tr>
     </table>
 </div>

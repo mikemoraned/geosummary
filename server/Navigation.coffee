@@ -14,7 +14,7 @@ class Navigation
     geohashes = for char in base32
       baseGeohash + char
     rows = _.chain(geohashes).groupBy((g) => geohash.decode(g).latitude).values().value()
-    rows = _.map(rows, (r) => _.chain(r).sortBy((g) => geohash.decode(g).longitude).map(@_toUrl("/%s")).value())
+    rows = _.map(rows, (r) => _.chain(r).sortBy((g) => geohash.decode(g).longitude).map(@_toUrl("/%s/")).value())
     {
       columns: rows[0].length
       rows: rows.length

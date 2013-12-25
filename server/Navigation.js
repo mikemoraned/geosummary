@@ -41,7 +41,7 @@
       rows = _.map(rows, function(r) {
         return _.chain(r).sortBy(function(g) {
           return geohash.decode(g).longitude;
-        }).map(_this._toUrl("/%s")).value();
+        }).map(_this._toUrl("/%s/")).value();
       });
       return {
         columns: rows[0].length,

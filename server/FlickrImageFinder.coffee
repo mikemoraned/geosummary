@@ -8,6 +8,7 @@ class FlickrImageFinder
   constructor: (@apiKey, @size) ->
     @fixedURI = util.format("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%s" +
       "&sort=interestingness-desc&content_type=1&media=photos&license=1,2,3,4,5,6,7" +
+      "&extras=owner_name" +
       "&format=json&nojsoncallback=1",
       @apiKey)
 
@@ -51,6 +52,11 @@ class FlickrImageFinder
         {
           'img_href': util.format("http://farm%s.staticflickr.com/%s/%s_%s_%s.jpg", p.farm, p.server, p.id, p.secret, @size)
           'info_href' : util.format("http://flic.kr/p/%s", Base58.encode(p.id))
+          'name' : p.title
+          'authority' : {
+            'name' : p.ownername
+            'href' : util.format("http://flickr.com/photos/%s", p.owner)
+          }
         }
       )
     else

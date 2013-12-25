@@ -11,9 +11,9 @@ class Application
     $.getJSON(@location, (data, status) =>
       console.dir(data)
       console.dir(status)
-      if status == "success" && data.result?
-        console.dir(data.result)
-        @model.images(data.result)
+      if status == "success" && data.images?
+        console.dir(data.images)
+        @model.images(data.images)
       else
         console.log("Failed")
     )

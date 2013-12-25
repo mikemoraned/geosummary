@@ -1,12 +1,17 @@
 HTTP = require("q-io/http")
 _ = require("underscore")._
 util = require("util")
+ngeohash = require("ngeohash")
 
 class FlickrImageFinder
   constructor: (@apiKey, @size) ->
 
-  findImages: (success, error) =>
-    url = util.format("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%s&bbox=50%2C12%2C51%2C13&format=json&nojsoncallback=1", @apiKey)
+  findImages: (geohash, success, error) =>
+    console.log(geohash)
+
+    url = util.format("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%s&bbox=%s&format=json&nojsoncallback=1",
+      @apiKey, @_boundingBox(geohash))
+    console.log("url: %s", url)
     HTTP.request(url).then(
       (result) =>
         console.log("Status: %s", result.status)
@@ -20,6 +25,10 @@ class FlickrImageFinder
         console.dir(e)
         error()
       )
+
+  _boundingBox: (geohash) =>
+    # 50%2C12%2C51%2C13
+    ngeohash.decode_bbox(geohash).join(",")
 
   _parseResponse: (io, success, error) =>
     console.log("Will parse response")

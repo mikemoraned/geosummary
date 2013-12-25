@@ -20,9 +20,9 @@
       return $.getJSON(this.location, function(data, status) {
         console.dir(data);
         console.dir(status);
-        if (status === "success" && (data.result != null)) {
-          console.dir(data.result);
-          return _this.model.images(data.result);
+        if (status === "success" && (data.images != null)) {
+          console.dir(data.images);
+          return _this.model.images(data.images);
         } else {
           return console.log("Failed");
         }

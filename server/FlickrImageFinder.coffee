@@ -2,7 +2,7 @@ HTTP = require("q-io/http")
 _ = require("underscore")._
 util = require("util")
 ngeohash = require("ngeohash")
-Base58 = require("Base58")
+Base58 = require('encdec').create()
 
 class FlickrImageFinder
   constructor: (@apiKey, @size) ->

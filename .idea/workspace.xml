@@ -26,16 +26,7 @@
       <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="19" selection-start="76" selection-end="76" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="645">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="26" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="255">
+            <state line="3" column="20" selection-start="77" selection-end="77" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="645">
               <folding />
             </state>
           </provider>
@@ -44,16 +35,7 @@
       <file leaf-file-name="geohash.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/geohash.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="26" selection-start="269" selection-end="269" vertical-scroll-proportion="0.18728717" vertical-offset="0" max-vertical-offset="881">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bower.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/bower.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="1" selection-start="436" selection-end="436" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="435">
+            <state line="17" column="20" selection-start="394" selection-end="394" vertical-scroll-proportion="0.16572078" vertical-offset="109" max-vertical-offset="990">
               <folding />
             </state>
           </provider>
@@ -62,7 +44,7 @@
       <file leaf-file-name="Application.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/Application.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="24" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="405">
+            <state line="35" column="25" selection-start="1127" selection-end="1127" vertical-scroll-proportion="-10.294118" vertical-offset="0" max-vertical-offset="690">
               <folding />
             </state>
           </provider>
@@ -71,7 +53,16 @@
       <file leaf-file-name="web.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="22" selection-start="729" selection-end="729" vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="960">
+            <state line="58" column="25" selection-start="1351" selection-end="1363" vertical-scroll-proportion="0.0" vertical-offset="250" max-vertical-offset="1170">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Navigation.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/Navigation.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="101" selection-start="619" selection-end="619" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
               <folding />
             </state>
           </provider>
@@ -80,7 +71,7 @@
       <file leaf-file-name="FlickrImageFinder.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="60" selection-start="1372" selection-end="1421" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="990">
+            <state line="35" column="5" selection-start="1034" selection-end="1034" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="1080">
               <folding />
             </state>
           </provider>
@@ -110,11 +101,12 @@
         <option value="$PROJECT_DIR$/static/js/Foop.coffee" />
         <option value="$PROJECT_DIR$/client/bower.json" />
         <option value="$PROJECT_DIR$/server/FlickrImageFinder.js" />
-        <option value="$PROJECT_DIR$/web.coffee" />
         <option value="$PROJECT_DIR$/views/index.html" />
-        <option value="$PROJECT_DIR$/client/js/Application.coffee" />
-        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/web.coffee" />
         <option value="$PROJECT_DIR$/server/FlickrImageFinder.coffee" />
+        <option value="$PROJECT_DIR$/client/js/Application.coffee" />
+        <option value="$PROJECT_DIR$/server/Navigation.coffee" />
+        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/views/geohash.html" />
       </list>
     </option>
@@ -151,6 +143,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -207,39 +200,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="geosummary" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="geosummary" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="geosummary" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="geosummary" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -279,13 +240,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="underscore" />
+              <option name="myItemId" value="knockout-mapping" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -293,8 +253,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="settings" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -302,14 +262,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -320,15 +272,23 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -351,7 +311,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="22" width="1676" height="1028" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -384,20 +344,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="63" selection-start="802" selection-end="816" vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="795">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="34" selection-start="1322" selection-end="1322" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="780">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="19" selection-start="76" selection-end="76" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="585">
@@ -440,13 +386,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="1" selection-start="436" selection-end="436" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="435">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="10" selection-start="252" selection-end="252" vertical-scroll-proportion="0.14917128" vertical-offset="0" max-vertical-offset="1170">
@@ -454,44 +393,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="19" selection-start="76" selection-end="76" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="645">
+        <state line="9" column="26" selection-start="269" selection-end="269" vertical-scroll-proportion="0.15323496" vertical-offset="0" max-vertical-offset="881">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/Application.coffee">
+    <entry file="file://$PROJECT_DIR$/client/bower.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="24" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+        <state line="22" column="1" selection-start="436" selection-end="436" vertical-scroll-proportion="0.37457433" vertical-offset="0" max-vertical-offset="881">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/Navigation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="22" selection-start="729" selection-end="729" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="960">
+        <state line="58" column="25" selection-start="1351" selection-end="1363" vertical-scroll-proportion="0.0" vertical-offset="250" max-vertical-offset="1170">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="60" selection-start="1372" selection-end="1421" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="990">
+        <state line="35" column="5" selection-start="1034" selection-end="1034" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="1080">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.html">
+    <entry file="file://$PROJECT_DIR$/server/Navigation.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="26" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="255">
+        <state line="16" column="101" selection-start="619" selection-end="619" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/Application.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="25" selection-start="1127" selection-end="1127" vertical-scroll-proportion="-10.294118" vertical-offset="0" max-vertical-offset="690">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="20" selection-start="77" selection-end="77" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="645">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/geohash.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="26" selection-start="269" selection-end="269" vertical-scroll-proportion="0.18728717" vertical-offset="0" max-vertical-offset="881">
+        <state line="17" column="20" selection-start="394" selection-end="394" vertical-scroll-proportion="0.16572078" vertical-offset="109" max-vertical-offset="990">
           <folding />
         </state>
       </provider>

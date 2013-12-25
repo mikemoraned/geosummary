@@ -4,7 +4,7 @@
 <title>GeoSummary version {{thisPackage.version}}</title>
 
 <style type="text/css">
-    .sample {
+    .sample, .navigation {
         float: left;
         width: 320px;
         height: 400px;
@@ -14,7 +14,25 @@
     .sample .attribution {
         text-align: right;
     }
+    .navigation table {
+        width: 100%;
+    }
+    .navigation table {
+        border: 1px solid;
+        border-collapse: collapse;
+    }
+    .navigation td {
+        border: 1px solid;
+    }
 </style>
+
+<div class="navigation" data-bind="with: navigation">
+    <table data-bind="foreach: down.values">
+        <tr data-bind="foreach: $data">
+           <td><a data-bind="attr: { href: href }, text: name"></a></td>
+        </tr>
+    </table>
+</div>
 
 <div data-bind="foreach: images">
     <div class="sample">
@@ -31,11 +49,12 @@
 <script src="/bower_components/uri.js/src/URI.min.js"></script>
 <script src="/bower_components/zepto/zepto.min.js"></script>
 <script src="/bower_components/knockout.js/knockout.js"></script>
+<script src="/bower_components/knockout-mapping/knockout.mapping.js"></script>
 <script src="/bower_components/underscore/underscore-min.js"></script>
 <script src="/js/Application.js"></script>
 <script type="application/javascript">
     $(function() {
-        var app = new Application(window.location.href, "images/", 10);
+        var app = new Application(window.location.href, "images", "navigation", 11);
         ko.applyBindings(app.model);
         app.run();
     });

@@ -52,6 +52,20 @@ app.get('/:geohash/images', (req, resp) ->
   )
 )
 
+Navigation = require("./server/Navigation")
+navigation = new Navigation()
+
+app.get('/:geohash/navigation', (req, resp) ->
+  navigation.navigateFrom(req.params.geohash,
+    (result) =>
+      console.dir(result)
+      resp.send({
+        'geohash' : req.params.geohash,
+        'navigation' : result
+      })
+  )
+)
+
 port = process.env.PORT || 9000
 console.log("Attempting to listen on %s ...", port)
 app.listen(port, () =>

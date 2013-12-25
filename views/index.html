@@ -4,17 +4,9 @@
 <h1>GeoSummary version {{thisPackage.version}}</h1>
 For info, see: <a href="https://github.com/mikemoraned/geosummary">geosummary</a> on github.
 
-<div data-bind="foreach: images">
-    <img data-bind="attr: { src: href }"/>
+<h2>Some starting points</h2>
+<div>
+    <ul>
+        <li><a href="u309/">u309</a></li>
+    </ul>
 </div>
-
-<script src="bower_components/zepto/zepto.min.js"></script>
-<script src="bower_components/knockout.js/knockout.js"></script>
-<script src="js/Application.js"></script>
-<script type="application/javascript">
-    $(function() {
-        var app = new Application("/images/u309");
-        ko.applyBindings(app.model);
-        app.run();
-    });
-</script>

@@ -33,11 +33,17 @@
     });
   });
 
+  app.get('/:geohash', function(req, resp) {
+    return resp.render("geohash", {
+      thisPackage: require("./package.json")
+    });
+  });
+
   FlickrImageFinder = require("./server/FlickrImageFinder");
 
   imageFinder = new FlickrImageFinder(process.env['FLICKR_API_KEY'], "n");
 
-  app.get('/images/:geohash', function(req, resp) {
+  app.get('/:geohash/images', function(req, resp) {
     var _this = this;
     return imageFinder.findImages(req.params.geohash, function(result) {
       console.dir(result);

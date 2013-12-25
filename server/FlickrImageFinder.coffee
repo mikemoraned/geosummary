@@ -6,7 +6,7 @@ ngeohash = require("ngeohash")
 class FlickrImageFinder
   constructor: (@apiKey, @size) ->
     @fixedURI = util.format("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%s" +
-      "&sort=interestingness-desc" +
+      "&sort=interestingness-desc&content_type=1&media=photos" +
       "&format=json&nojsoncallback=1",
       @apiKey)
 

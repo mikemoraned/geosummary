@@ -102,7 +102,7 @@
       <file leaf-file-name="FlickrImageFinder.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="8" selection-start="286" selection-end="286" vertical-scroll-proportion="0.13259669" vertical-offset="0" max-vertical-offset="960">
+            <state line="8" column="61" selection-start="339" selection-end="339" vertical-scroll-proportion="0.13259669" vertical-offset="0" max-vertical-offset="960">
               <folding />
             </state>
           </provider>
@@ -513,7 +513,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="8" selection-start="286" selection-end="286" vertical-scroll-proportion="0.13259669" vertical-offset="0" max-vertical-offset="960">
+        <state line="8" column="61" selection-start="339" selection-end="339" vertical-scroll-proportion="0.13259669" vertical-offset="0" max-vertical-offset="960">
           <folding />
         </state>
       </provider>

@@ -7,17 +7,24 @@
     .sample {
         float: left;
         width: 320px;
-        height: 320px;
+        height: 400px;
         margin-right: 10px;
         margin-bottom: 5px;
+    }
+    .sample .attribution {
+        text-align: right;
     }
 </style>
 
 <div data-bind="foreach: images">
     <div class="sample">
+        <h3 data-bind="text: name"></h3>
         <a data-bind="attr: { href: info_href }">
             <img data-bind="attr: { src: img_href }"/>
         </a>
+        <p class="attribution">
+            <b>(by <a data-bind="attr: { href: authority.href }, text: authority.name"></a>)</b>
+        </p>
     </div>
 </div>
 

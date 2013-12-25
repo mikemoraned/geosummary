@@ -5,6 +5,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/FlickrImageFinder.coffee" afterPath="$PROJECT_DIR$/server/FlickrImageFinder.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/FlickrImageFinder.js" afterPath="$PROJECT_DIR$/server/FlickrImageFinder.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/FlickrImageFinder.map" afterPath="$PROJECT_DIR$/server/FlickrImageFinder.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="geosummary.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -102,7 +103,7 @@
       <file leaf-file-name="FlickrImageFinder.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="61" selection-start="339" selection-end="339" vertical-scroll-proportion="0.13259669" vertical-offset="0" max-vertical-offset="960">
+            <state line="8" column="76" selection-start="354" selection-end="354" vertical-scroll-proportion="0.13259669" vertical-offset="0" max-vertical-offset="960">
               <folding />
             </state>
           </provider>
@@ -513,7 +514,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="61" selection-start="339" selection-end="339" vertical-scroll-proportion="0.13259669" vertical-offset="0" max-vertical-offset="960">
+        <state line="8" column="76" selection-start="354" selection-end="354" vertical-scroll-proportion="0.13259669" vertical-offset="0" max-vertical-offset="960">
           <folding />
         </state>
       </provider>

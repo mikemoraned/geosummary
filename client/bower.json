@@ -1,0 +1,21 @@
+{
+  "name": "geosummary",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mikemoraned/geosummary",
+  "authors": [
+    "Mike Moran <mike@houseofmoran.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "knockout.js": "~3.0.0",
+    "zepto": "~1.1.2"
+  }
+}

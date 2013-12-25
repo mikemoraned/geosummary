@@ -4,14 +4,30 @@
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   Application = (function() {
-    function Application(locations) {
+    function Application(location) {
+      this.location = location;
       this.run = __bind(this.run, this);
       console.log("Loaded");
       console.log("using:");
-      console.dir(locations);
+      console.dir(this.location);
+      this.model = {
+        images: ko.observableArray([])
+      };
     }
 
-    Application.prototype.run = function() {};
+    Application.prototype.run = function() {
+      var _this = this;
+      return $.getJSON(this.location, function(data, status) {
+        console.dir(data);
+        console.dir(status);
+        if (status === "success" && (data.result != null)) {
+          console.dir(data.result);
+          return _this.model.images(data.result);
+        } else {
+          return console.log("Failed");
+        }
+      });
+    };
 
     return Application;
 

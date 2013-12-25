@@ -3,8 +3,22 @@
 <meta charset=utf-8>
 <title>GeoSummary version {{thisPackage.version}}</title>
 
+<style type="text/css">
+    .sample {
+        float: left;
+        width: 320px;
+        height: 320px;
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+</style>
+
 <div data-bind="foreach: images">
-    <img data-bind="attr: { src: href }"/>
+    <div class="sample">
+        <a data-bind="attr: { href: info_href }">
+            <img data-bind="attr: { src: img_href }"/>
+        </a>
+    </div>
 </div>
 
 <script src="/bower_components/uri.js/src/URI.min.js"></script>

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a6d0dc2-d409-4b1a-8ad7-47c9f7c22a30" name="Default" comment="" />
+    <list default="true" id="3a6d0dc2-d409-4b1a-8ad7-47c9f7c22a30" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/FlickrImageFinder.coffee" afterPath="$PROJECT_DIR$/server/FlickrImageFinder.coffee" />
+    </list>
     <ignored path="geosummary.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,10 +61,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Application.coffee" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Application.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/Application.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="24" selection-start="536" selection-end="536" vertical-scroll-proportion="0.26519337" vertical-offset="0" max-vertical-offset="905">
+            <state line="16" column="24" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
               <folding />
             </state>
           </provider>
@@ -95,10 +97,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FlickrImageFinder.coffee" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="FlickrImageFinder.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="60" selection-start="1202" selection-end="1251" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="915">
+            <state line="12" column="70" selection-start="455" selection-end="455" vertical-scroll-proportion="0.19889502" vertical-offset="0" max-vertical-offset="915">
               <folding />
             </state>
           </provider>
@@ -128,12 +130,12 @@
         <option value="$PROJECT_DIR$/static/js/Foop.coffee" />
         <option value="$PROJECT_DIR$/client/bower.json" />
         <option value="$PROJECT_DIR$/server/FlickrImageFinder.js" />
-        <option value="$PROJECT_DIR$/server/FlickrImageFinder.coffee" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/web.coffee" />
         <option value="$PROJECT_DIR$/views/index.html" />
         <option value="$PROJECT_DIR$/views/geohash.html" />
         <option value="$PROJECT_DIR$/client/js/Application.coffee" />
+        <option value="$PROJECT_DIR$/server/FlickrImageFinder.coffee" />
       </list>
     </option>
   </component>
@@ -479,13 +481,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="60" selection-start="1202" selection-end="1251" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="915">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="22" selection-start="729" selection-end="729" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="960">
@@ -509,7 +504,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/Application.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="24" selection-start="536" selection-end="536" vertical-scroll-proportion="0.26519337" vertical-offset="0" max-vertical-offset="905">
+        <state line="16" column="24" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="70" selection-start="455" selection-end="455" vertical-scroll-proportion="0.19889502" vertical-offset="0" max-vertical-offset="915">
           <folding />
         </state>
       </provider>

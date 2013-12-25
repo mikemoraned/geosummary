@@ -19,13 +19,14 @@
       this._parseResponse = __bind(this._parseResponse, this);
       this._boundingBox = __bind(this._boundingBox, this);
       this.findImages = __bind(this.findImages, this);
+      this.fixedURI = util.format("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%s&format=json&nojsoncallback=1", this.apiKey);
     }
 
     FlickrImageFinder.prototype.findImages = function(geohash, success, error) {
       var url,
         _this = this;
       console.log(geohash);
-      url = util.format("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%s&bbox=%s&format=json&nojsoncallback=1", this.apiKey, this._boundingBox(geohash));
+      url = util.format("%s&bbox=%s", this.fixedURI, this._boundingBox(geohash));
       console.log("url: %s", url);
       return HTTP.request(url).then(function(result) {
         console.log("Status: %s", result.status);

@@ -5,7 +5,10 @@ ngeohash = require("ngeohash")
 
 class FlickrImageFinder
   constructor: (@apiKey, @size) ->
-    @fixedURI = util.format("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%s&format=json&nojsoncallback=1", @apiKey)
+    @fixedURI = util.format("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%s" +
+      "&sort=interestingness-desc" +
+      "&format=json&nojsoncallback=1",
+      @apiKey)
 
   findImages: (geohash, success, error) =>
     console.log(geohash)

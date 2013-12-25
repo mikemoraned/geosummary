@@ -11,7 +11,7 @@
 
   ngeohash = require("ngeohash");
 
-  Base58 = require("Base58");
+  Base58 = require('encdec').create();
 
   FlickrImageFinder = (function() {
     function FlickrImageFinder(apiKey, size) {

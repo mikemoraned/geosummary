@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a6d0dc2-d409-4b1a-8ad7-47c9f7c22a30" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/Navigation.coffee" afterPath="$PROJECT_DIR$/server/Navigation.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/Navigation.js" afterPath="$PROJECT_DIR$/server/Navigation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/geohash.html" afterPath="$PROJECT_DIR$/views/geohash.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="3a6d0dc2-d409-4b1a-8ad7-47c9f7c22a30" name="Default" comment="" />
     <ignored path="geosummary.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,10 +32,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="geohash.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="geohash.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/geohash.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="57" selection-start="557" selection-end="557" vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="855">
+            <state line="17" column="20" selection-start="394" selection-end="394" vertical-scroll-proportion="0.16572078" vertical-offset="109" max-vertical-offset="990">
               <folding />
             </state>
           </provider>
@@ -64,10 +59,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Navigation.coffee" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Navigation.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/Navigation.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="101" selection-start="619" selection-end="619" vertical-scroll-proportion="0.26519337" vertical-offset="0" max-vertical-offset="905">
+            <state line="16" column="101" selection-start="619" selection-end="619" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
               <folding />
             </state>
           </provider>
@@ -107,12 +102,12 @@
         <option value="$PROJECT_DIR$/client/bower.json" />
         <option value="$PROJECT_DIR$/server/FlickrImageFinder.js" />
         <option value="$PROJECT_DIR$/views/index.html" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/web.coffee" />
         <option value="$PROJECT_DIR$/server/FlickrImageFinder.coffee" />
         <option value="$PROJECT_DIR$/client/js/Application.coffee" />
-        <option value="$PROJECT_DIR$/views/geohash.html" />
         <option value="$PROJECT_DIR$/server/Navigation.coffee" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/views/geohash.html" />
       </list>
     </option>
   </component>
@@ -405,13 +400,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="20" selection-start="77" selection-end="77" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="645">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/bower.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="1" selection-start="436" selection-end="436" vertical-scroll-proportion="0.37457433" vertical-offset="0" max-vertical-offset="881">
@@ -440,6 +428,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/Navigation.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="101" selection-start="619" selection-end="619" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/js/Application.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="25" selection-start="1127" selection-end="1127" vertical-scroll-proportion="-10.294118" vertical-offset="0" max-vertical-offset="690">
@@ -447,16 +442,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/geohash.html">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="57" selection-start="557" selection-end="557" vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="855">
+        <state line="3" column="20" selection-start="77" selection-end="77" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="645">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/Navigation.coffee">
+    <entry file="file://$PROJECT_DIR$/views/geohash.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="101" selection-start="619" selection-end="619" vertical-scroll-proportion="0.26519337" vertical-offset="0" max-vertical-offset="905">
+        <state line="17" column="20" selection-start="394" selection-end="394" vertical-scroll-proportion="0.16572078" vertical-offset="109" max-vertical-offset="990">
           <folding />
         </state>
       </provider>

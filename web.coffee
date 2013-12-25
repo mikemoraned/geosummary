@@ -27,16 +27,23 @@ app.get('/', (req, resp) ->
   })
 )
 
-FlickrImageFinder = require("./server/FlickrImageFinder")
-imageFinder = new FlickrImageFinder(process.env['FLICKR_API_KEY'], "z")
+# geo-hash page
+app.get('/:geohash', (req, resp) ->
+  resp.render("geohash", {
+    thisPackage: require("./package.json")
+  })
+)
 
-app.get('/images/:geohash', (req, resp) ->
-  imageFinder.findImages(
+FlickrImageFinder = require("./server/FlickrImageFinder")
+imageFinder = new FlickrImageFinder(process.env['FLICKR_API_KEY'], "n")
+
+app.get('/:geohash/images', (req, resp) ->
+  imageFinder.findImages(req.params.geohash,
     (result) =>
       console.dir(result)
       resp.send({
         'geohash' : req.params.geohash,
-        'result' : result
+        'images' : result
       })
     ,
     () ->

@@ -4,25 +4,29 @@
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   Application = (function() {
-    function Application(location) {
+    function Application(baseURI, location, limit) {
+      this.baseURI = baseURI;
       this.location = location;
+      this.limit = limit;
       this.run = __bind(this.run, this);
       console.log("Loaded");
-      console.log("using:");
-      console.dir(this.location);
+      console.log("using: base: %s, location: %s, limit: %s", this.baseURI, this.location, this.limit);
       this.model = {
         images: ko.observableArray([])
       };
     }
 
     Application.prototype.run = function() {
-      var _this = this;
-      return $.getJSON(this.location, function(data, status) {
+      var uri,
+        _this = this;
+      uri = URI(this.location).absoluteTo(this.baseURI).toString();
+      console.log("Fetching: %s", uri);
+      return $.getJSON(uri, function(data, status) {
         console.dir(data);
         console.dir(status);
-        if (status === "success" && (data.result != null)) {
-          console.dir(data.result);
-          return _this.model.images(data.result);
+        if (status === "success" && (data.images != null)) {
+          console.dir(data.images);
+          return _this.model.images(_.first(data.images, _this.limit));
         } else {
           return console.log("Failed");
         }

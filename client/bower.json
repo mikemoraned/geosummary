@@ -16,6 +16,8 @@
   ],
   "dependencies": {
     "knockout.js": "~3.0.0",
-    "zepto": "~1.1.2"
+    "zepto": "~1.1.2",
+    "uri.js": "~1.11.2",
+    "underscore": "~1.5.2"
   }
 }

@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a6d0dc2-d409-4b1a-8ad7-47c9f7c22a30" name="Default" comment="" />
+    <list default="true" id="3a6d0dc2-d409-4b1a-8ad7-47c9f7c22a30" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/geosummary.iml" afterPath="$PROJECT_DIR$/.idea/geosummary.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.coffee" afterPath="$PROJECT_DIR$/web.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="geosummary.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,10 +28,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="package.json" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="19" selection-start="76" selection-end="76" vertical-scroll-proportion="0.05107832" vertical-offset="0" max-vertical-offset="881">
+            <state line="3" column="19" selection-start="76" selection-end="76" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="615">
               <folding />
             </state>
           </provider>
@@ -36,7 +41,10 @@
         <entry file="file://$PROJECT_DIR$/views/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state line="5" column="0" selection-start="197" selection-end="197" vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="375">
-              <folding />
+              <folding>
+                <marker date="1387980924000" expanded="true" signature="230:280" placeholder="..." />
+                <marker date="1387980924000" expanded="true" signature="487:631" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -54,7 +62,11 @@
         <entry file="file://$PROJECT_DIR$/client/js/Application.coffee">
           <provider selected="true" editor-type-id="text-editor">
             <state line="9" column="12" selection-start="198" selection-end="198" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
-              <folding />
+              <folding>
+                <marker date="1387980924000" expanded="true" signature="20:451" placeholder="..." />
+                <marker date="1387980924000" expanded="true" signature="203:451" placeholder="..." />
+                <marker date="1387980924000" expanded="true" signature="248:445" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,10 +89,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.coffee" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="web.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="17" selection-start="478" selection-end="478" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="855">
+            <state line="30" column="69" selection-start="782" selection-end="782" vertical-scroll-proportion="0.49723756" vertical-offset="0" max-vertical-offset="905">
               <folding />
             </state>
           </provider>
@@ -89,7 +101,7 @@
       <file leaf-file-name="FlickrImageFinder.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="34" selection-start="1322" selection-end="1322" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="780">
+            <state line="33" column="56" selection-start="1036" selection-end="1036" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
               <folding />
             </state>
           </provider>
@@ -118,11 +130,12 @@
         <option value="$PROJECT_DIR$/server/FlickrImageFinder.coffee" />
         <option value="$PROJECT_DIR$/client/index.html" />
         <option value="$PROJECT_DIR$/static/js/Foop.coffee" />
-        <option value="$PROJECT_DIR$/web.coffee" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/client/js/Application.coffee" />
         <option value="$PROJECT_DIR$/views/index.html" />
         <option value="$PROJECT_DIR$/client/bower.json" />
+        <option value="$PROJECT_DIR$/server/FlickrImageFinder.js" />
+        <option value="$PROJECT_DIR$/web.coffee" />
       </list>
     </option>
   </component>
@@ -427,31 +440,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="34" selection-start="1322" selection-end="1322" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="17" selection-start="478" selection-end="478" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/Application.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="12" selection-start="198" selection-end="198" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="0" selection-start="197" selection-end="197" vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="375">
-          <folding />
+          <folding>
+            <marker date="1387980924000" expanded="true" signature="230:280" placeholder="..." />
+            <marker date="1387980924000" expanded="true" signature="487:631" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -464,7 +459,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="19" selection-start="76" selection-end="76" vertical-scroll-proportion="0.05107832" vertical-offset="0" max-vertical-offset="881">
+        <state line="3" column="19" selection-start="76" selection-end="76" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/Application.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="12" selection-start="198" selection-end="198" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+          <folding>
+            <marker date="1387980924000" expanded="true" signature="20:451" placeholder="..." />
+            <marker date="1387980924000" expanded="true" signature="203:451" placeholder="..." />
+            <marker date="1387980924000" expanded="true" signature="248:445" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="10" selection-start="252" selection-end="252" vertical-scroll-proportion="0.14917128" vertical-offset="0" max-vertical-offset="1170">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="56" selection-start="1036" selection-end="1036" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="69" selection-start="782" selection-end="782" vertical-scroll-proportion="0.49723756" vertical-offset="0" max-vertical-offset="905">
           <folding />
         </state>
       </provider>

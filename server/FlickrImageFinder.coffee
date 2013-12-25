@@ -2,6 +2,7 @@ HTTP = require("q-io/http")
 _ = require("underscore")._
 util = require("util")
 ngeohash = require("ngeohash")
+Base58 = require("Base58")
 
 class FlickrImageFinder
   constructor: (@apiKey, @size) ->
@@ -48,7 +49,8 @@ class FlickrImageFinder
     if flickrSearchJson.photos?.photo?
       _.map(flickrSearchJson.photos.photo, (p) =>
         {
-          href: util.format("http://farm%s.staticflickr.com/%s/%s_%s_%s.jpg", p.farm, p.server, p.id, p.secret, @size)
+          'img_href': util.format("http://farm%s.staticflickr.com/%s/%s_%s_%s.jpg", p.farm, p.server, p.id, p.secret, @size)
+          'info_href' : util.format("http://flic.kr/p/%s", Base58.encode(p.id))
         }
       )
     else

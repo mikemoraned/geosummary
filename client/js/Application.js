@@ -4,22 +4,31 @@
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   Application = (function() {
-    function Application(baseURI, location, limit) {
+    function Application(baseURI, imagesPath, navigationPath, limit) {
       this.baseURI = baseURI;
-      this.location = location;
+      this.imagesPath = imagesPath;
+      this.navigationPath = navigationPath;
       this.limit = limit;
+      this._fetchNavigation = __bind(this._fetchNavigation, this);
+      this._fetchImages = __bind(this._fetchImages, this);
       this.run = __bind(this.run, this);
       console.log("Loaded");
-      console.log("using: base: %s, location: %s, limit: %s", this.baseURI, this.location, this.limit);
+      console.log("using: base: %s, imagesPath: %s, navigationPath: %s, limit: %s", this.baseURI, this.imagesPath, this.navigationPath, this.limit);
       this.model = {
+        navigation: ko.observable(null),
         images: ko.observableArray([])
       };
     }
 
     Application.prototype.run = function() {
+      this._fetchImages();
+      return this._fetchNavigation();
+    };
+
+    Application.prototype._fetchImages = function() {
       var uri,
         _this = this;
-      uri = URI(this.location).absoluteTo(this.baseURI).toString();
+      uri = URI(this.imagesPath).absoluteTo(this.baseURI).toString();
       console.log("Fetching: %s", uri);
       return $.getJSON(uri, function(data, status) {
         console.dir(data);
@@ -28,7 +37,24 @@
           console.dir(data.images);
           return _this.model.images(_.first(data.images, _this.limit));
         } else {
-          return console.log("Failed");
+          return console.log("Failed to fetch: %s", uri);
+        }
+      });
+    };
+
+    Application.prototype._fetchNavigation = function() {
+      var uri,
+        _this = this;
+      uri = URI(this.navigationPath).absoluteTo(this.baseURI).toString();
+      console.log("Fetching: %s", uri);
+      return $.getJSON(uri, function(data, status) {
+        console.dir(data);
+        console.dir(status);
+        if (status === "success" && (data.navigation != null)) {
+          console.dir(data.navigation);
+          return _this.model.navigation(ko.mapping.fromJS(data.navigation));
+        } else {
+          return console.log("Failed to fetch: %s", uri);
         }
       });
     };

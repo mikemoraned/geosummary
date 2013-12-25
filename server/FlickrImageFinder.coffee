@@ -1,7 +1,7 @@
 HTTP = require("q-io/http")
 _ = require("underscore")._
 util = require("util")
-geohash = require("ngeohash")
+ngeohash = require("ngeohash")
 Base58 = require('encdec').create()
 
 class FlickrImageFinder
@@ -33,7 +33,7 @@ class FlickrImageFinder
 
   _boundingBox: (geohash) =>
     # 50%2C12%2C51%2C13
-    geohash.decode_bbox(geohash).join(",")
+    ngeohash.decode_bbox(geohash).join(",")
 
   _parseResponse: (io, success, error) =>
     console.log("Will parse response")

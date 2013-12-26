@@ -6,10 +6,10 @@ class Navigation
 
   navigateFrom: (geohash, success) =>
     nav = {
-      'down' : @_downFrom(geohash)
+      'descend' : @_downFrom(geohash)
     }
     if geohash.length > 1
-      nav.out = @_toUrl("/%s/")(geohash.substring(0, geohash.length - 1))
+      nav.ascend = @_toUrl("/%s/")(geohash.substring(0, geohash.length - 1))
     success(nav)
 
   _downFrom: (baseGeohash) =>

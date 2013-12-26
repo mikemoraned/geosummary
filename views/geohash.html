@@ -27,12 +27,12 @@
 </style>
 
 <div class="navigation" data-bind="with: navigation">
-    <table data-bind="foreach: down.values">
+    <table data-bind="foreach: descend.values">
         <tr data-bind="foreach: $data">
            <td><a data-bind="attr: { href: href }, text: name"></a></td>
         </tr>
     </table>
-    <a data-bind="attr: { href: out.href }">out: <span data-bind="text: out.name"></span></a>
+    <a data-bind="attr: { href: ascend.href }">out: <span data-bind="text: ascend.name"></span></a>
 </div>
 
 <div data-bind="foreach: images">

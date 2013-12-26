@@ -5,9 +5,12 @@ util = require("util")
 class Navigation
 
   navigateFrom: (geohash, success) =>
-    success({
-      'down' : @_downFrom(geohash)
-    })
+    nav = {
+      'descend' : @_downFrom(geohash)
+    }
+    if geohash.length > 1
+      nav.ascend = @_toUrl("/%s/")(geohash.substring(0, geohash.length - 1))
+    success(nav)
 
   _downFrom: (baseGeohash) =>
     base32 = ['0','1','2','3','4','5','6','7','8','9','b','c','d','e','f','g','h','j','k','m','n','p','q','r','s','t','u','v','w','x','y','z']

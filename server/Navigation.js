@@ -17,9 +17,14 @@
     }
 
     Navigation.prototype.navigateFrom = function(geohash, success) {
-      return success({
-        'down': this._downFrom(geohash)
-      });
+      var nav;
+      nav = {
+        'descend': this._downFrom(geohash)
+      };
+      if (geohash.length > 1) {
+        nav.ascend = this._toUrl("/%s/")(geohash.substring(0, geohash.length - 1));
+      }
+      return success(nav);
     };
 
     Navigation.prototype._downFrom = function(baseGeohash) {

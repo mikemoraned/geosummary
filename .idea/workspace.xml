@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a6d0dc2-d409-4b1a-8ad7-47c9f7c22a30" name="Default" comment="" />
+    <list default="true" id="3a6d0dc2-d409-4b1a-8ad7-47c9f7c22a30" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/Navigation.coffee" afterPath="$PROJECT_DIR$/server/Navigation.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/Navigation.js" afterPath="$PROJECT_DIR$/server/Navigation.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/Navigation.map" afterPath="$PROJECT_DIR$/server/Navigation.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/geohash.html" afterPath="$PROJECT_DIR$/views/geohash.html" />
+    </list>
     <ignored path="geosummary.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,7 +40,7 @@
       <file leaf-file-name="geohash.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/geohash.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="20" selection-start="394" selection-end="394" vertical-scroll-proportion="0.16572078" vertical-offset="109" max-vertical-offset="990">
+            <state line="34" column="81" selection-start="880" selection-end="880" vertical-scroll-proportion="0.57888764" vertical-offset="0" max-vertical-offset="1005">
               <folding />
             </state>
           </provider>
@@ -62,7 +67,7 @@
       <file leaf-file-name="Navigation.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/Navigation.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="101" selection-start="619" selection-end="619" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+            <state line="11" column="16" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
               <folding />
             </state>
           </provider>
@@ -105,8 +110,8 @@
         <option value="$PROJECT_DIR$/web.coffee" />
         <option value="$PROJECT_DIR$/server/FlickrImageFinder.coffee" />
         <option value="$PROJECT_DIR$/client/js/Application.coffee" />
-        <option value="$PROJECT_DIR$/server/Navigation.coffee" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/server/Navigation.coffee" />
         <option value="$PROJECT_DIR$/views/geohash.html" />
       </list>
     </option>
@@ -428,13 +433,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/Navigation.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="101" selection-start="619" selection-end="619" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/js/Application.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="25" selection-start="1127" selection-end="1127" vertical-scroll-proportion="-10.294118" vertical-offset="0" max-vertical-offset="690">
@@ -449,9 +447,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/Navigation.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="16" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/geohash.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="20" selection-start="394" selection-end="394" vertical-scroll-proportion="0.16572078" vertical-offset="109" max-vertical-offset="990">
+        <state line="34" column="81" selection-start="880" selection-end="880" vertical-scroll-proportion="0.57888764" vertical-offset="0" max-vertical-offset="1005">
           <folding />
         </state>
       </provider>

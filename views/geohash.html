@@ -41,6 +41,9 @@
         <a data-bind="attr: { href: info_href }">
             <img data-bind="attr: { src: img_href }"/>
         </a>
+        <p class="descend">
+            <a data-bind="attr: { href: descend.href }, text: descend.name"></a>
+        </p>
         <p class="attribution">
             <b>(by <a data-bind="attr: { href: authority.href }, text: authority.name"></a>)</b>
         </p>

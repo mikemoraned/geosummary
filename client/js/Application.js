@@ -9,6 +9,8 @@
       this.imagesPath = imagesPath;
       this.navigationPath = navigationPath;
       this.limit = limit;
+      this._navEntryForURL = __bind(this._navEntryForURL, this);
+      this._assignGeoLinks = __bind(this._assignGeoLinks, this);
       this._fetchNavigation = __bind(this._fetchNavigation, this);
       this._fetchImages = __bind(this._fetchImages, this);
       this.run = __bind(this.run, this);
@@ -31,11 +33,19 @@
       uri = URI(this.imagesPath).absoluteTo(this.baseURI).toString();
       console.log("Fetching: %s", uri);
       return $.getJSON(uri, function(data, status) {
+        var image, _i, _len, _ref, _results;
         console.dir(data);
         console.dir(status);
         if (status === "success" && (data.images != null)) {
           console.dir(data.images);
-          return _this.model.images(_.first(data.images, _this.limit));
+          _this.model.images(_.first(data.images, _this.limit));
+          _ref = _this.model.images();
+          _results = [];
+          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+            image = _ref[_i];
+            _results.push(image.descend = ko.observable(null));
+          }
+          return _results;
         } else {
           return console.log("Failed to fetch: %s", uri);
         }
@@ -57,6 +67,52 @@
           return console.log("Failed to fetch: %s", uri);
         }
       });
+    };
+
+    Application.prototype._assignGeoLinks = function() {
+      var entries, href, image, _i, _len, _ref, _results;
+      if ((this.model.images() != null) && (this.model.navigation() != null)) {
+        console.log("Assigning geo links");
+        entries = this._navEntryForURL();
+        console.dir(entries);
+        _ref = this.model.images();
+        _results = [];
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          image = _ref[_i];
+          console.log("Image: %s", image.img_href);
+          _results.push((function() {
+            var _j, _len1, _ref1, _results1;
+            _ref1 = image.geo_hrefs;
+            _results1 = [];
+            for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+              href = _ref1[_j];
+              console.log("Looking for %s", href);
+              if (entries[href] != null) {
+                console.log("Assigning %s to %s", entries[href], href);
+                _results1.push(image.descend(entries[href]));
+              } else {
+                _results1.push(void 0);
+              }
+            }
+            return _results1;
+          })());
+        }
+        return _results;
+      }
+    };
+
+    Application.prototype._navEntryForURL = function() {
+      var entry, navForURL, row, _i, _j, _len, _len1, _ref;
+      navForURL = {};
+      _ref = this.model.navigation().descend.values();
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        row = _ref[_i];
+        for (_j = 0, _len1 = row.length; _j < _len1; _j++) {
+          entry = row[_j];
+          navForURL[entry.href()] = entry;
+        }
+      }
+      return navForURL;
     };
 
     return Application;

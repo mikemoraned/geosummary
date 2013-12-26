@@ -26,6 +26,10 @@
     }
 </style>
 
+<div class="overview">
+    Found <span data-bind="text: images().length"></span> images.
+</div>
+
 <div class="navigation" data-bind="with: navigation">
     <table data-bind="foreach: descend.values">
         <tr data-bind="foreach: $data">

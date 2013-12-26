@@ -17,11 +17,12 @@
     function FlickrImageFinder(apiKey, size) {
       this.apiKey = apiKey;
       this.size = size;
+      this._geoURIsFor = __bind(this._geoURIsFor, this);
       this._convertToImageResult = __bind(this._convertToImageResult, this);
       this._parseResponse = __bind(this._parseResponse, this);
       this._boundingBox = __bind(this._boundingBox, this);
       this.findImages = __bind(this.findImages, this);
-      this.fixedURI = util.format("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%s" + "&sort=interestingness-desc&content_type=1&media=photos&license=1,2,3,4,5,6,7" + "&extras=owner_name" + "&format=json&nojsoncallback=1", this.apiKey);
+      this.fixedURI = util.format("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%s" + "&sort=interestingness-desc&content_type=1&media=photos&license=1,2,3,4,5,6,7" + "&extras=owner_name,geo" + "&format=json&nojsoncallback=1", this.apiKey);
     }
 
     FlickrImageFinder.prototype.findImages = function(geohash, success, error) {
@@ -64,6 +65,7 @@
           return {
             'img_href': util.format("http://farm%s.staticflickr.com/%s/%s_%s_%s.jpg", p.farm, p.server, p.id, p.secret, _this.size),
             'info_href': util.format("http://flic.kr/p/%s", Base58.encode(p.id)),
+            'geo_hrefs': _this._geoURIsFor(p),
             'name': p.title,
             'authority': {
               'name': p.ownername,
@@ -75,6 +77,25 @@
         console.dir(flickrSearchJson);
         return {};
       }
+    };
+
+    FlickrImageFinder.prototype._geoURIsFor = function(photo) {
+      var geohash, geohashes, length, _i, _len, _results;
+      geohash = ngeohash.encode(photo.latitude, photo.longitude);
+      geohashes = (function() {
+        var _i, _ref, _results;
+        _results = [];
+        for (length = _i = 1, _ref = geohash.length; 1 <= _ref ? _i <= _ref : _i >= _ref; length = 1 <= _ref ? ++_i : --_i) {
+          _results.push(ngeohash.encode(photo.latitude, photo.longitude, length));
+        }
+        return _results;
+      })();
+      _results = [];
+      for (_i = 0, _len = geohashes.length; _i < _len; _i++) {
+        geohash = geohashes[_i];
+        _results.push(util.format("/%s/", geohash));
+      }
+      return _results;
     };
 
     return FlickrImageFinder;

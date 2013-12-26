@@ -8,7 +8,7 @@ class FlickrImageFinder
   constructor: (@apiKey, @size) ->
     @fixedURI = util.format("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%s" +
       "&sort=interestingness-desc&content_type=1&media=photos&license=1,2,3,4,5,6,7" +
-      "&extras=owner_name" +
+      "&extras=owner_name,geo" +
       "&format=json&nojsoncallback=1",
       @apiKey)
 
@@ -50,8 +50,9 @@ class FlickrImageFinder
     if flickrSearchJson.photos?.photo?
       _.map(flickrSearchJson.photos.photo, (p) =>
         {
-          'img_href': util.format("http://farm%s.staticflickr.com/%s/%s_%s_%s.jpg", p.farm, p.server, p.id, p.secret, @size)
+          'img_href'  : util.format("http://farm%s.staticflickr.com/%s/%s_%s_%s.jpg", p.farm, p.server, p.id, p.secret, @size)
           'info_href' : util.format("http://flic.kr/p/%s", Base58.encode(p.id))
+          'geo_hrefs' : @_geoURIsFor(p)
           'name' : p.title
           'authority' : {
             'name' : p.ownername
@@ -62,5 +63,12 @@ class FlickrImageFinder
     else
       console.dir(flickrSearchJson)
       {}
+
+  _geoURIsFor: (photo) =>
+    geohash = ngeohash.encode(photo.latitude, photo.longitude)
+    geohashes = for length in [1 .. geohash.length]
+      ngeohash.encode(photo.latitude, photo.longitude, length)
+    for geohash in geohashes
+      util.format("/%s/", geohash)
 
 module.exports = FlickrImageFinder

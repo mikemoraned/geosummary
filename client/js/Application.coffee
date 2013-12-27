@@ -1,5 +1,5 @@
 class Application
-  constructor: (@baseURI, @imagesPath, @navigationPath, @limit) ->
+  constructor: (@doc, @baseURI, @imagesPath, @navigationPath, @limit) ->
     console.log("Loaded")
     console.log("using: base: %s, imagesPath: %s, navigationPath: %s, limit: %s",
       @baseURI, @imagesPath, @navigationPath, @limit)
@@ -34,8 +34,21 @@ class Application
       if status == "success" && data.navigation?
         console.dir(data.navigation)
         @model.navigation(ko.mapping.fromJS(data.navigation))
+        @_preRender()
       else
         console.log("Failed to fetch: %s", uri)
     )
+
+  _preRender: () =>
+    for row in @model.navigation().descend.values()
+      for nav in row  
+        @_addPreRender(nav.href())
+
+  _addPreRender: (href) =>
+    console.log("Prerender hint: %s", href)
+    elem = @doc.createElement("link")
+    elem.setAttribute("rel", "prerender")
+    elem.setAttribute("href", href)
+    @doc.getElementsByTagName("head")[0].appendChild(elem)
 
 window.Application = Application

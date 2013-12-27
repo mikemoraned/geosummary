@@ -4,11 +4,14 @@
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   Application = (function() {
-    function Application(baseURI, imagesPath, navigationPath, limit) {
+    function Application(doc, baseURI, imagesPath, navigationPath, limit) {
+      this.doc = doc;
       this.baseURI = baseURI;
       this.imagesPath = imagesPath;
       this.navigationPath = navigationPath;
       this.limit = limit;
+      this._addPreRender = __bind(this._addPreRender, this);
+      this._preRender = __bind(this._preRender, this);
       this._fetchNavigation = __bind(this._fetchNavigation, this);
       this._fetchImages = __bind(this._fetchImages, this);
       this.run = __bind(this.run, this);
@@ -52,11 +55,40 @@
         console.dir(status);
         if (status === "success" && (data.navigation != null)) {
           console.dir(data.navigation);
-          return _this.model.navigation(ko.mapping.fromJS(data.navigation));
+          _this.model.navigation(ko.mapping.fromJS(data.navigation));
+          return _this._preRender();
         } else {
           return console.log("Failed to fetch: %s", uri);
         }
       });
+    };
+
+    Application.prototype._preRender = function() {
+      var nav, row, _i, _len, _ref, _results;
+      _ref = this.model.navigation().descend.values();
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        row = _ref[_i];
+        _results.push((function() {
+          var _j, _len1, _results1;
+          _results1 = [];
+          for (_j = 0, _len1 = row.length; _j < _len1; _j++) {
+            nav = row[_j];
+            _results1.push(this._addPreRender(nav.href()));
+          }
+          return _results1;
+        }).call(this));
+      }
+      return _results;
+    };
+
+    Application.prototype._addPreRender = function(href) {
+      var elem;
+      console.log("Prerender hint: %s", href);
+      elem = this.doc.createElement("link");
+      elem.setAttribute("rel", "prerender");
+      elem.setAttribute("href", href);
+      return this.doc.getElementsByTagName("head")[0].appendChild(elem);
     };
 
     return Application;

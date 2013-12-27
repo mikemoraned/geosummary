@@ -46,7 +46,11 @@
   app.get('/:geohash/images', function(req, resp) {
     var _this = this;
     return imageFinder.findImages(req.params.geohash, function(result) {
+      var secondsExpiry;
       console.dir(result);
+      secondsExpiry = 24 * 60 * 60;
+      resp.setHeader("Cache-Control", "public, max-age=" + secondsExpiry);
+      resp.setHeader("Expires", new Date(Date.now() + (secondsExpiry * 1000)).toUTCString());
       return resp.send({
         'geohash': req.params.geohash,
         'images': result

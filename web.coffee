@@ -41,6 +41,9 @@ app.get('/:geohash/images', (req, resp) ->
   imageFinder.findImages(req.params.geohash,
     (result) =>
       console.dir(result)
+      secondsExpiry = 24 * 60 * 60
+      resp.setHeader "Cache-Control", "public, max-age=#{secondsExpiry}"
+      resp.setHeader "Expires", new Date(Date.now() + (secondsExpiry * 1000)).toUTCString()
       resp.send({
         'geohash' : req.params.geohash,
         'images' : result

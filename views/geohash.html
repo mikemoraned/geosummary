@@ -6,41 +6,61 @@
 <link rel="subresource" href="navigation">
 
 <style type="text/css">
-    .sample, .navigation {
-        float: left;
-        width: 320px;
-        height: 400px;
-        margin-right: 10px;
-        margin-bottom: 5px;
+    /*.sample, .navigation {*/
+        /*float: left;*/
+        /*width: 320px;*/
+        /*height: 400px;*/
+        /*margin-right: 10px;*/
+        /*margin-bottom: 5px;*/
+    /*}*/
+    /*.sample .attribution {*/
+        /*text-align: right;*/
+    /*}*/
+    /*.navigation table {*/
+        /*width: 100%;*/
+    /*}*/
+    /*.navigation table {*/
+        /*border: 1px solid;*/
+        /*border-collapse: collapse;*/
+    /*}*/
+    /*.navigation td {*/
+        /*border: 1px solid;*/
+    /*}*/
+
+    html, body
+    {
+        height: 100%;
     }
-    .sample .attribution {
-        text-align: right;
-    }
-    .navigation table {
+
+    .navigation, .navigation .rows {
+        display: block;
         width: 100%;
+        height: 100%;
     }
-    .navigation table {
-        border: 1px solid;
-        border-collapse: collapse;
+
+    .navigation .row {
+        width: 100%;
+        height: 25%;
     }
-    .navigation td {
-        border: 1px solid;
+
+    .navigation .item {
+        float: left;
+        width: 12.5%;
     }
 </style>
 
-<div class="overview" data-bind="visible: images" style="display: none">
-    Found <span data-bind="text: images().length"></span> images.
-</div>
+<!--<div class="overview" data-bind="visible: images" style="display: none">-->
+    <!--Found <span data-bind="text: images().length"></span> images.-->
+<!--</div>-->
 
 <div class="navigation" data-bind="with: navigation, visible: navigation" style="display: none">
-    <table data-bind="foreach: descend.values">
-        <tr data-bind="foreach: $data">
-           <td><a data-bind="attr: { href: href }, text: name"></a></td>
-        </tr>
-    </table>
-    <a data-bind="attr: { href: ascend.href }">out: <span data-bind="text: ascend.name"></span></a>
+    <div class="rows" data-bind="foreach: descend.values">
+        <div class="row" data-bind="foreach: $data">
+           <div class="item"><a data-bind="attr: { href: href }, text: name"></a></div>
+        </div>
+    </div>
 </div>
-
+<!--
 <div class="images" data-bind="foreach: images, visible: images" style="display: none">
     <div class="sample">
         <h3 data-bind="text: name"></h3>
@@ -52,6 +72,7 @@
         </p>
     </div>
 </div>
+-->
 
 <script src="/bower_components/uri.js/src/URI.min.js"></script>
 <script src="/bower_components/zepto/zepto.min.js"></script>

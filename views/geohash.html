@@ -6,27 +6,6 @@
 <link rel="subresource" href="navigation">
 
 <style type="text/css">
-    /*.sample, .navigation {*/
-        /*float: left;*/
-        /*width: 320px;*/
-        /*height: 400px;*/
-        /*margin-right: 10px;*/
-        /*margin-bottom: 5px;*/
-    /*}*/
-    /*.sample .attribution {*/
-        /*text-align: right;*/
-    /*}*/
-    /*.navigation table {*/
-        /*width: 100%;*/
-    /*}*/
-    /*.navigation table {*/
-        /*border: 1px solid;*/
-        /*border-collapse: collapse;*/
-    /*}*/
-    /*.navigation td {*/
-        /*border: 1px solid;*/
-    /*}*/
-
     html, body
     {
         height: 100%;
@@ -43,36 +22,40 @@
         height: 25%;
     }
 
+    .navigation .rows.height4 .row {
+        height: 25%;
+    }
+
+    .navigation .rows.height8 .row {
+        height: 12.5%;
+    }
+
     .navigation .item {
         float: left;
+    }
+
+    .navigation .row.width8 .item {
         width: 12.5%;
+    }
+
+    .navigation .row.width4 .item {
+        width: 25%;
+    }
+
+    .navigation a {
+        display: block;
+        width: 100%;
+        height: auto;
     }
 </style>
 
-<!--<div class="overview" data-bind="visible: images" style="display: none">-->
-    <!--Found <span data-bind="text: images().length"></span> images.-->
-<!--</div>-->
-
 <div class="navigation" data-bind="with: navigation, visible: navigation" style="display: none">
-    <div class="rows" data-bind="foreach: descend.values">
-        <div class="row" data-bind="foreach: $data">
+    <div class="rows" data-bind="foreach: descend.values, css: { height8: descend.values().length == 8, height4: descend.values().length == 4 }">
+        <div class="row" data-bind="foreach: $data, css: { width8: $data.length == 8, width4: $data.length == 4 }">
            <div class="item"><a data-bind="attr: { href: href }, text: name"></a></div>
         </div>
     </div>
 </div>
-<!--
-<div class="images" data-bind="foreach: images, visible: images" style="display: none">
-    <div class="sample">
-        <h3 data-bind="text: name"></h3>
-        <a data-bind="attr: { href: info_href }">
-            <img data-bind="attr: { src: img_href }"/>
-        </a>
-        <p class="attribution">
-            <b>(by <a data-bind="attr: { href: authority.href }, text: authority.name"></a>)</b>
-        </p>
-    </div>
-</div>
--->
 
 <script src="/bower_components/uri.js/src/URI.min.js"></script>
 <script src="/bower_components/zepto/zepto.min.js"></script>

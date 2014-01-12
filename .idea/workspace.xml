@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3a6d0dc2-d409-4b1a-8ad7-47c9f7c22a30" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/geohash.html" afterPath="$PROJECT_DIR$/views/geohash.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="geosummary.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,7 +37,7 @@
       <file leaf-file-name="geohash.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/geohash.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="34" selection-start="794" selection-end="794" vertical-scroll-proportion="0.10489511" vertical-offset="420" max-vertical-offset="1410">
+            <state line="52" column="129" selection-start="1091" selection-end="1091" vertical-scroll-proportion="0.8041958" vertical-offset="90" max-vertical-offset="1155">
               <folding />
             </state>
           </provider>
@@ -440,7 +439,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/geohash.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="34" selection-start="794" selection-end="794" vertical-scroll-proportion="0.10489511" vertical-offset="420" max-vertical-offset="1410">
+        <state line="52" column="129" selection-start="1091" selection-end="1091" vertical-scroll-proportion="0.8041958" vertical-offset="90" max-vertical-offset="1155">
           <folding />
         </state>
       </provider>

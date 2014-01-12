@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a6d0dc2-d409-4b1a-8ad7-47c9f7c22a30" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/geohash.html" afterPath="$PROJECT_DIR$/views/geohash.html" />
-    </list>
+    <list default="true" id="3a6d0dc2-d409-4b1a-8ad7-47c9f7c22a30" name="Default" comment="" />
     <ignored path="geosummary.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,10 +32,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="geohash.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="geohash.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/geohash.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="129" selection-start="1091" selection-end="1091" vertical-scroll-proportion="0.8041958" vertical-offset="90" max-vertical-offset="1155">
+            <state line="52" column="129" selection-start="1091" selection-end="1091" vertical-scroll-proportion="-20.125" vertical-offset="297" max-vertical-offset="1155">
               <folding />
             </state>
           </provider>
@@ -46,7 +44,7 @@
       <file leaf-file-name="Application.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/Application.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="25" selection-start="1127" selection-end="1127" vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="690">
+            <state line="35" column="25" selection-start="1127" selection-end="1127" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
               <folding />
             </state>
           </provider>
@@ -70,10 +68,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FlickrImageFinder.coffee" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="FlickrImageFinder.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="5" selection-start="1034" selection-end="1034" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="1080">
+            <state line="35" column="5" selection-start="1034" selection-end="1034" vertical-scroll-proportion="0.5782313" vertical-offset="15" max-vertical-offset="1080">
               <folding />
             </state>
           </provider>
@@ -219,29 +217,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="geosummary" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="geosummary" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="knockout-mapping" />
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -402,23 +378,9 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/Application.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="25" selection-start="1127" selection-end="1127" vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="690">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/Navigation.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="16" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="5" selection-start="1034" selection-end="1034" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="1080">
           <folding />
         </state>
       </provider>
@@ -439,7 +401,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/geohash.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="129" selection-start="1091" selection-end="1091" vertical-scroll-proportion="0.8041958" vertical-offset="90" max-vertical-offset="1155">
+        <state line="52" column="129" selection-start="1091" selection-end="1091" vertical-scroll-proportion="-20.125" vertical-offset="297" max-vertical-offset="1155">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/Application.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="25" selection-start="1127" selection-end="1127" vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="690">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="5" selection-start="1034" selection-end="1034" vertical-scroll-proportion="0.5782313" vertical-offset="15" max-vertical-offset="1080">
           <folding />
         </state>
       </provider>

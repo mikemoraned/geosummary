@@ -37,7 +37,7 @@
       <file leaf-file-name="geohash.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/geohash.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="69" selection-start="1671" selection-end="1671" vertical-scroll-proportion="0.7902098" vertical-offset="237" max-vertical-offset="1290">
+            <state line="61" column="95" selection-start="1697" selection-end="1697" vertical-scroll-proportion="0.7902098" vertical-offset="237" max-vertical-offset="1290">
               <folding />
             </state>
           </provider>
@@ -387,20 +387,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="18" selection-start="1679" selection-end="1688" vertical-scroll-proportion="0.0" vertical-offset="213" max-vertical-offset="1095">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/Navigation.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="92" selection-start="640" selection-end="640" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="20" selection-start="77" selection-end="77" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="645">
@@ -415,9 +401,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/Navigation.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="92" selection-start="640" selection-end="640" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="18" selection-start="1679" selection-end="1688" vertical-scroll-proportion="0.0" vertical-offset="213" max-vertical-offset="1095">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/geohash.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="69" selection-start="1671" selection-end="1671" vertical-scroll-proportion="0.7902098" vertical-offset="237" max-vertical-offset="1290">
+        <state line="61" column="95" selection-start="1697" selection-end="1697" vertical-scroll-proportion="0.7902098" vertical-offset="237" max-vertical-offset="1290">
           <folding />
         </state>
       </provider>

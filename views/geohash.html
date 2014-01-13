@@ -59,7 +59,7 @@
                    <span data-bind="text: name"></span>
                </div>
                <div class="images" data-bind="foreach: images">
-                   <a data-bind="attr: { href: info_href, title: name }"><img data-bind="attr: { src: img_href }"/></a>
+                   <a data-bind="attr: { href: info_href, title: name + ' by ' + authority.name }"><img data-bind="attr: { src: img_href }"/></a>
                </div>
            </div>
         </div>

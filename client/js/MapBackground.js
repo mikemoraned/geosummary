@@ -13,7 +13,7 @@
     }
 
     MapBackground.prototype._navigationChanged = function() {
-      var bbox, bounds, boundsRect, northEast, southWest;
+      var bbox, bounds, boundsRect, mapPixelOrigin, mapPixelSize, northEast, northEastPoint, southWest, southWestPoint, xScale, yScale;
       if ((this.navigation() != null) && (this.map == null)) {
         console.dir(this.navigation());
         bbox = this.navigation().descend.geo_bbox();
@@ -29,7 +29,20 @@
           color: "#ff7800",
           weight: 1
         });
-        return boundsRect.addTo(this.map);
+        mapPixelOrigin = this.map.getPixelOrigin();
+        console.dir(mapPixelOrigin);
+        mapPixelSize = this.map.getSize();
+        console.dir(mapPixelSize);
+        southWestPoint = this.map.project(southWest);
+        northEastPoint = this.map.project(northEast);
+        console.dir(southWestPoint);
+        console.dir(northEastPoint);
+        xScale = mapPixelSize.x / (northEastPoint.x - southWestPoint.x);
+        yScale = mapPixelSize.y / (southWestPoint.y - northEastPoint.y);
+        console.log("xScale: " + xScale + ", yScale: " + yScale);
+        return $("#" + this.selector).css({
+          '-webkit-transform': "scale(" + xScale + ", " + yScale + ")"
+        });
       }
     };
 

@@ -17,6 +17,23 @@ class MapBackground
         maxZoom: 18
       }).addTo(@map)
       boundsRect = L.rectangle(bounds, {color: "#ff7800", weight: 1})
-      boundsRect.addTo(@map)
+#      boundsRect.addTo(@map)
+
+      mapPixelOrigin = @map.getPixelOrigin()
+      console.dir(mapPixelOrigin)
+      mapPixelSize = @map.getSize()
+      console.dir(mapPixelSize)
+
+      southWestPoint = @map.project(southWest)
+      northEastPoint = @map.project(northEast)
+      console.dir(southWestPoint)
+      console.dir(northEastPoint)
+
+      xScale = mapPixelSize.x / (northEastPoint.x - southWestPoint.x)
+      yScale = mapPixelSize.y / (southWestPoint.y - northEastPoint.y)
+
+      console.log("xScale: #{xScale}, yScale: #{yScale}")
+
+      $("##{@selector}").css({'-webkit-transform': "scale(#{xScale}, #{yScale})"})
 
 window.MapBackground = MapBackground

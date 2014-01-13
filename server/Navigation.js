@@ -42,7 +42,7 @@
       })();
       rows = _.chain(geohashes).groupBy(function(g) {
         return geohash.decode(g).latitude;
-      }).values().value();
+      }).values().reverse().value();
       rows = _.map(rows, function(r) {
         return _.chain(r).sortBy(function(g) {
           return geohash.decode(g).longitude;

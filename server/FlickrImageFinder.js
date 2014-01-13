@@ -21,7 +21,7 @@
       this._parseResponse = __bind(this._parseResponse, this);
       this._boundingBox = __bind(this._boundingBox, this);
       this.findImages = __bind(this.findImages, this);
-      this.fixedURI = util.format("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%s" + "&sort=interestingness-desc&content_type=1&media=photos&license=1,2,3,4,5,6,7" + "&extras=owner_name" + "&format=json&nojsoncallback=1", this.apiKey);
+      this.fixedURI = util.format("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%s" + "&sort=interestingness-desc&content_type=1&media=photos&license=1,2,3,4,5,6,7" + "&extras=owner_name,geo" + "&format=json&nojsoncallback=1", this.apiKey);
     }
 
     FlickrImageFinder.prototype.findImages = function(geohash, success, error) {
@@ -64,6 +64,7 @@
           return {
             'img_href': util.format("http://farm%s.staticflickr.com/%s/%s_%s_%s.jpg", p.farm, p.server, p.id, p.secret, _this.size),
             'info_href': util.format("http://flic.kr/p/%s", Base58.encode(p.id)),
+            'geohash': ngeohash.encode(p.latitude, p.longitude),
             'name': p.title,
             'authority': {
               'name': p.ownername,

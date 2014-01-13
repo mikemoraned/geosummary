@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a6d0dc2-d409-4b1a-8ad7-47c9f7c22a30" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/MapBackground.coffee" afterPath="$PROJECT_DIR$/client/js/MapBackground.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/MapBackground.js" afterPath="$PROJECT_DIR$/client/js/MapBackground.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/MapBackground.map" afterPath="$PROJECT_DIR$/client/js/MapBackground.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/geohash.html" afterPath="$PROJECT_DIR$/views/geohash.html" />
     </list>
     <ignored path="geosummary.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,7 +40,7 @@
       <file leaf-file-name="geohash.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/geohash.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="5" selection-start="1235" selection-end="1235" vertical-scroll-proportion="-6.375" vertical-offset="777" max-vertical-offset="1635">
+            <state line="62" column="24" selection-start="1254" selection-end="1254" vertical-scroll-proportion="-28.125" vertical-offset="255" max-vertical-offset="1725">
               <folding />
             </state>
           </provider>
@@ -51,7 +49,7 @@
       <file leaf-file-name="MapBackground.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/js/MapBackground.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="737" selection-end="737" vertical-scroll-proportion="0.34013605" vertical-offset="0" max-vertical-offset="882">
+            <state line="20" column="0" selection-start="736" selection-end="736" vertical-scroll-proportion="0.34013605" vertical-offset="0" max-vertical-offset="882">
               <folding />
             </state>
           </provider>
@@ -443,14 +441,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/geohash.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="5" selection-start="1235" selection-end="1235" vertical-scroll-proportion="-6.375" vertical-offset="777" max-vertical-offset="1635">
+        <state line="62" column="24" selection-start="1254" selection-end="1254" vertical-scroll-proportion="-28.125" vertical-offset="255" max-vertical-offset="1725">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/MapBackground.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="737" selection-end="737" vertical-scroll-proportion="0.34013605" vertical-offset="0" max-vertical-offset="882">
+        <state line="20" column="0" selection-start="736" selection-end="736" vertical-scroll-proportion="0.34013605" vertical-offset="0" max-vertical-offset="882">
           <folding />
         </state>
       </provider>

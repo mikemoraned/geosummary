@@ -21,6 +21,7 @@ class Navigation
     {
       columns: rows[0].length
       rows: rows.length
+      geo_bbox: geohash.decode_bbox(baseGeohash)
       values: rows
     }
 

@@ -13,8 +13,14 @@
     }
 
     MapBackground.prototype._navigationChanged = function() {
-      if (this.map == null) {
-        this.map = L.map(this.selector).setView([51.505, -0.09], 13);
+      var bbox, bounds, northEast, southWest;
+      if ((this.navigation() != null) && (this.map == null)) {
+        console.dir(this.navigation());
+        bbox = this.navigation().descend.geo_bbox();
+        southWest = L.latLng(bbox[0], bbox[1]);
+        northEast = L.latLng(bbox[2], bbox[3]);
+        bounds = L.latLngBounds(southWest, northEast);
+        this.map = L.map(this.selector).fitBounds(bounds);
         return L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           attribution: 'Map data © OpenStreetMap contributors',
           maxZoom: 18

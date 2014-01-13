@@ -20,6 +20,7 @@ class Application
       console.log("We have some #{@model.images().length} images and navigation")
       for rows in @model.navigation().descend.values()
         for value in rows
+          value.loaded(true)
           value.images(_.chain(@model.images())
             .filter((image) =>
               image.geohash.indexOf(value.name()) == 0
@@ -52,6 +53,7 @@ class Application
         for rows in mapped.descend.values()
           for value in rows
             value.images = ko.observableArray([])
+            value.loaded = ko.observable(false)
         @model.navigation(mapped)
       else
         console.log("Failed to fetch: %s", uri)

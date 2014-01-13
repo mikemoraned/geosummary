@@ -44,6 +44,7 @@
             _results1 = [];
             for (_j = 0, _len1 = rows.length; _j < _len1; _j++) {
               value = rows[_j];
+              value.loaded(true);
               _results1.push(value.images(_.chain(this.model.images()).filter(function(image) {
                 return image.geohash.indexOf(value.name()) === 0;
               }).take(this.perGeoHashLimit).value()));
@@ -90,6 +91,7 @@
             for (_j = 0, _len1 = rows.length; _j < _len1; _j++) {
               value = rows[_j];
               value.images = ko.observableArray([]);
+              value.loaded = ko.observable(false);
             }
           }
           return _this.model.navigation(mapped);

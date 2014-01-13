@@ -1,5 +1,5 @@
 class Application
-  constructor: (@baseURI, @imagesPath, @navigationPath, @limit) ->
+  constructor: (@baseURI, @imagesPath, @navigationPath, @limit, @perGeoHashLimit) ->
     console.log("Loaded")
     console.log("using: base: %s, imagesPath: %s, navigationPath: %s, limit: %s",
       @baseURI, @imagesPath, @navigationPath, @limit)
@@ -20,10 +20,12 @@ class Application
       console.log("We have some #{@model.images().length} images and navigation")
       for rows in @model.navigation().descend.values()
         for value in rows
-          value.images(_.filter(@model.images(), (image) =>
-            console.log("#{image.geohash},#{value.name()}")
-            image.geohash.indexOf(value.name()) == 0
-          ))
+          value.images(_.chain(@model.images())
+            .filter((image) =>
+              image.geohash.indexOf(value.name()) == 0
+            )
+            .take(@perGeoHashLimit)
+            .value())
 
   _fetchImages: () =>
     uri = URI(@imagesPath).absoluteTo(@baseURI).toString()

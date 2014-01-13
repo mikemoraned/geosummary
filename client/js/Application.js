@@ -4,11 +4,12 @@
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   Application = (function() {
-    function Application(baseURI, imagesPath, navigationPath, limit) {
+    function Application(baseURI, imagesPath, navigationPath, limit, perGeoHashLimit) {
       this.baseURI = baseURI;
       this.imagesPath = imagesPath;
       this.navigationPath = navigationPath;
       this.limit = limit;
+      this.perGeoHashLimit = perGeoHashLimit;
       this._fetchNavigation = __bind(this._fetchNavigation, this);
       this._fetchImages = __bind(this._fetchImages, this);
       this._assignImagesToNavigation = __bind(this._assignImagesToNavigation, this);
@@ -43,10 +44,9 @@
             _results1 = [];
             for (_j = 0, _len1 = rows.length; _j < _len1; _j++) {
               value = rows[_j];
-              _results1.push(value.images(_.filter(this.model.images(), function(image) {
-                console.log("" + image.geohash + "," + (value.name()));
+              _results1.push(value.images(_.chain(this.model.images()).filter(function(image) {
                 return image.geohash.indexOf(value.name()) === 0;
-              })));
+              }).take(this.perGeoHashLimit).value()));
             }
             return _results1;
           }).call(this));

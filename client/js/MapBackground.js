@@ -13,7 +13,7 @@
     }
 
     MapBackground.prototype._navigationChanged = function() {
-      var bbox, bounds, northEast, southWest;
+      var bbox, bounds, boundsRect, northEast, southWest;
       if ((this.navigation() != null) && (this.map == null)) {
         console.dir(this.navigation());
         bbox = this.navigation().descend.geo_bbox();
@@ -21,10 +21,15 @@
         northEast = L.latLng(bbox[2], bbox[3]);
         bounds = L.latLngBounds(southWest, northEast);
         this.map = L.map(this.selector).fitBounds(bounds);
-        return L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           attribution: 'Map data © OpenStreetMap contributors',
           maxZoom: 18
         }).addTo(this.map);
+        boundsRect = L.rectangle(bounds, {
+          color: "#ff7800",
+          weight: 1
+        });
+        return boundsRect.addTo(this.map);
       }
     };
 

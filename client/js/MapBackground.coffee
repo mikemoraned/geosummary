@@ -16,5 +16,7 @@ class MapBackground
         attribution: 'Map data © OpenStreetMap contributors',
         maxZoom: 18
       }).addTo(@map)
+      boundsRect = L.rectangle(bounds, {color: "#ff7800", weight: 1})
+      boundsRect.addTo(@map)
 
 window.MapBackground = MapBackground

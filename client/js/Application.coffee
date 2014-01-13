@@ -7,10 +7,23 @@ class Application
       navigation: ko.observable(null)
       images: ko.observableArray([])
     }
+    @model.navigation.subscribe(@_assignImagesToNavigation)
+    @model.images.subscribe(@_assignImagesToNavigation)
 
   run: () =>
     @_fetchImages()
     @_fetchNavigation()
+
+  _assignImagesToNavigation: () =>
+    console.log("Assigning")
+    if @model.images().length > 0 and @model.navigation()?
+      console.log("We have some #{@model.images().length} images and navigation")
+      for rows in @model.navigation().descend.values()
+        for value in rows
+          value.images(_.filter(@model.images(), (image) =>
+            console.log("#{image.geohash},#{value.name()}")
+            image.geohash.indexOf(value.name()) == 0
+          ))
 
   _fetchImages: () =>
     uri = URI(@imagesPath).absoluteTo(@baseURI).toString()
@@ -32,8 +45,12 @@ class Application
       console.dir(data)
       console.dir(status)
       if status == "success" && data.navigation?
-        console.dir(data.navigation)
-        @model.navigation(ko.mapping.fromJS(data.navigation))
+        console.dir("Loaded navigation")
+        mapped = ko.mapping.fromJS(data.navigation)
+        for rows in mapped.descend.values()
+          for value in rows
+            value.images = ko.observableArray([])
+        @model.navigation(mapped)
       else
         console.log("Failed to fetch: %s", uri)
     )

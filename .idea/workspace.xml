@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a6d0dc2-d409-4b1a-8ad7-47c9f7c22a30" name="Default" comment="" />
+    <list default="true" id="3a6d0dc2-d409-4b1a-8ad7-47c9f7c22a30" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/Application.coffee" afterPath="$PROJECT_DIR$/client/js/Application.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/Application.js" afterPath="$PROJECT_DIR$/client/js/Application.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/Application.map" afterPath="$PROJECT_DIR$/client/js/Application.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/FlickrImageFinder.coffee" afterPath="$PROJECT_DIR$/server/FlickrImageFinder.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/FlickrImageFinder.js" afterPath="$PROJECT_DIR$/server/FlickrImageFinder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/FlickrImageFinder.map" afterPath="$PROJECT_DIR$/server/FlickrImageFinder.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/geohash.html" afterPath="$PROJECT_DIR$/views/geohash.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.coffee" afterPath="$PROJECT_DIR$/web.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.js" afterPath="$PROJECT_DIR$/web.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="geosummary.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,7 +37,7 @@
       <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="20" selection-start="77" selection-end="77" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="645">
+            <state line="3" column="20" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="645">
               <folding />
             </state>
           </provider>
@@ -35,7 +46,7 @@
       <file leaf-file-name="geohash.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/geohash.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="129" selection-start="1091" selection-end="1091" vertical-scroll-proportion="-20.125" vertical-offset="297" max-vertical-offset="1155">
+            <state line="57" column="52" selection-start="1438" selection-end="1438" vertical-scroll-proportion="-22.0" vertical-offset="327" max-vertical-offset="1230">
               <folding />
             </state>
           </provider>
@@ -44,16 +55,16 @@
       <file leaf-file-name="Application.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/Application.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="25" selection-start="1127" selection-end="1127" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+            <state line="23" column="56" selection-start="920" selection-end="920" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="945">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.coffee" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="web.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="26" selection-start="1381" selection-end="1381" vertical-scroll-proportion="0.0" vertical-offset="250" max-vertical-offset="1215">
+            <state line="37" column="69" selection-start="912" selection-end="912" vertical-scroll-proportion="0.30272108" vertical-offset="288" max-vertical-offset="1215">
               <folding />
             </state>
           </provider>
@@ -62,16 +73,16 @@
       <file leaf-file-name="Navigation.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/Navigation.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="16" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="600">
+            <state line="11" column="16" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FlickrImageFinder.coffee" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="FlickrImageFinder.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="5" selection-start="1034" selection-end="1034" vertical-scroll-proportion="0.5782313" vertical-offset="15" max-vertical-offset="1080">
+            <state line="47" column="11" selection-start="1394" selection-end="1443" vertical-scroll-proportion="0.0" vertical-offset="213" max-vertical-offset="1095">
               <folding />
             </state>
           </provider>
@@ -102,12 +113,12 @@
         <option value="$PROJECT_DIR$/client/bower.json" />
         <option value="$PROJECT_DIR$/server/FlickrImageFinder.js" />
         <option value="$PROJECT_DIR$/views/index.html" />
-        <option value="$PROJECT_DIR$/server/FlickrImageFinder.coffee" />
-        <option value="$PROJECT_DIR$/client/js/Application.coffee" />
         <option value="$PROJECT_DIR$/server/Navigation.coffee" />
-        <option value="$PROJECT_DIR$/web.coffee" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/server/FlickrImageFinder.coffee" />
         <option value="$PROJECT_DIR$/views/geohash.html" />
+        <option value="$PROJECT_DIR$/client/js/Application.coffee" />
+        <option value="$PROJECT_DIR$/web.coffee" />
       </list>
     </option>
   </component>
@@ -297,11 +308,11 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24984875" sideWeight="0.6709539" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24984875" sideWeight="0.67142856" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290461" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -378,6 +389,13 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="20" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="645">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/Navigation.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="16" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
@@ -385,37 +403,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="26" selection-start="1381" selection-end="1381" vertical-scroll-proportion="0.0" vertical-offset="250" max-vertical-offset="1215">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="20" selection-start="77" selection-end="77" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="645">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/geohash.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="129" selection-start="1091" selection-end="1091" vertical-scroll-proportion="-20.125" vertical-offset="297" max-vertical-offset="1155">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/Application.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="25" selection-start="1127" selection-end="1127" vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="690">
+        <state line="57" column="52" selection-start="1438" selection-end="1438" vertical-scroll-proportion="-22.0" vertical-offset="327" max-vertical-offset="1230">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="5" selection-start="1034" selection-end="1034" vertical-scroll-proportion="0.5782313" vertical-offset="15" max-vertical-offset="1080">
+        <state line="47" column="11" selection-start="1394" selection-end="1443" vertical-scroll-proportion="0.0" vertical-offset="213" max-vertical-offset="1095">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/Application.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="56" selection-start="920" selection-end="920" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="945">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="69" selection-start="912" selection-end="912" vertical-scroll-proportion="0.30272108" vertical-offset="288" max-vertical-offset="1215">
           <folding />
         </state>
       </provider>

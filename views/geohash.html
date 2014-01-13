@@ -52,7 +52,12 @@
 <div class="navigation" data-bind="with: navigation, visible: navigation" style="display: none">
     <div class="rows" data-bind="foreach: descend.values, css: { height8: descend.values().length == 8, height4: descend.values().length == 4 }">
         <div class="row" data-bind="foreach: $data, css: { width8: $data.length == 8, width4: $data.length == 4 }">
-           <div class="item"><a data-bind="attr: { href: href }, text: name"></a></div>
+           <div class="item">
+               <a data-bind="attr: { href: href }, text: name"></a>
+               <div class="images" data-bind="foreach: images">
+                   <img data-bind="attr: { src: img_href }, text: name"></a>
+               </div>
+           </div>
         </div>
     </div>
 </div>

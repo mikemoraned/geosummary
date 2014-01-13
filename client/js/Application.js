@@ -11,6 +11,7 @@
       this.limit = limit;
       this._fetchNavigation = __bind(this._fetchNavigation, this);
       this._fetchImages = __bind(this._fetchImages, this);
+      this._assignImagesToNavigation = __bind(this._assignImagesToNavigation, this);
       this.run = __bind(this.run, this);
       console.log("Loaded");
       console.log("using: base: %s, imagesPath: %s, navigationPath: %s, limit: %s", this.baseURI, this.imagesPath, this.navigationPath, this.limit);
@@ -18,11 +19,40 @@
         navigation: ko.observable(null),
         images: ko.observableArray([])
       };
+      this.model.navigation.subscribe(this._assignImagesToNavigation);
+      this.model.images.subscribe(this._assignImagesToNavigation);
     }
 
     Application.prototype.run = function() {
       this._fetchImages();
       return this._fetchNavigation();
+    };
+
+    Application.prototype._assignImagesToNavigation = function() {
+      var rows, value, _i, _len, _ref, _results;
+      console.log("Assigning");
+      if (this.model.images().length > 0 && (this.model.navigation() != null)) {
+        console.log("We have some " + (this.model.images().length) + " images and navigation");
+        _ref = this.model.navigation().descend.values();
+        _results = [];
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          rows = _ref[_i];
+          _results.push((function() {
+            var _j, _len1, _results1,
+              _this = this;
+            _results1 = [];
+            for (_j = 0, _len1 = rows.length; _j < _len1; _j++) {
+              value = rows[_j];
+              _results1.push(value.images(_.filter(this.model.images(), function(image) {
+                console.log("" + image.geohash + "," + (value.name()));
+                return image.geohash.indexOf(value.name()) === 0;
+              })));
+            }
+            return _results1;
+          }).call(this));
+        }
+        return _results;
+      }
     };
 
     Application.prototype._fetchImages = function() {
@@ -48,11 +78,21 @@
       uri = URI(this.navigationPath).absoluteTo(this.baseURI).toString();
       console.log("Fetching: %s", uri);
       return $.getJSON(uri, function(data, status) {
+        var mapped, rows, value, _i, _j, _len, _len1, _ref;
         console.dir(data);
         console.dir(status);
         if (status === "success" && (data.navigation != null)) {
-          console.dir(data.navigation);
-          return _this.model.navigation(ko.mapping.fromJS(data.navigation));
+          console.dir("Loaded navigation");
+          mapped = ko.mapping.fromJS(data.navigation);
+          _ref = mapped.descend.values();
+          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+            rows = _ref[_i];
+            for (_j = 0, _len1 = rows.length; _j < _len1; _j++) {
+              value = rows[_j];
+              value.images = ko.observableArray([]);
+            }
+          }
+          return _this.model.navigation(mapped);
         } else {
           return console.log("Failed to fetch: %s", uri);
         }

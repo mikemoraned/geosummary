@@ -41,7 +41,7 @@
 
   FlickrImageFinder = require("./server/FlickrImageFinder");
 
-  imageFinder = new FlickrImageFinder(process.env['FLICKR_API_KEY'], "n");
+  imageFinder = new FlickrImageFinder(process.env['FLICKR_API_KEY'], "t");
 
   app.get('/:geohash/images', function(req, resp) {
     var _this = this;

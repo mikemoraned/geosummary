@@ -29,17 +29,22 @@ class MapBackground
       console.dir(southWestPoint)
       console.dir(northEastPoint)
 
+#      xTranslate = 0
+#      yTranslate = 0
       xTranslate = -1 * (southWestPoint.x - mapPixelOrigin.x)
       yTranslate = -1 * (northEastPoint.y - mapPixelOrigin.y)
 
       console.log("xTranslate: #{xTranslate}, yTranslate: #{yTranslate}")
 
+#      xScale = 1
+#      yScale = 1
       xScale = mapPixelSize.x / (northEastPoint.x - southWestPoint.x)
       yScale = mapPixelSize.y / (southWestPoint.y - northEastPoint.y)
 
       console.log("xScale: #{xScale}, yScale: #{yScale}")
 
       transform = "translate(#{xTranslate}px, #{yTranslate}px) scale(#{xScale}, #{yScale});"
+#      transform = "scale(#{xScale}, #{yScale}) translate(#{xTranslate}px, #{yTranslate}px);"
 
       console.log(transform)
 

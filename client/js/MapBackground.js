@@ -38,12 +38,12 @@
         northEastPoint = this.map.project(northEast);
         console.dir(southWestPoint);
         console.dir(northEastPoint);
-        xTranslate = -1 * (southWestPoint.x - mapPixelOrigin.x);
-        yTranslate = -1 * (northEastPoint.y - mapPixelOrigin.y);
-        console.log("xTranslate: " + xTranslate + ", yTranslate: " + yTranslate);
         xScale = mapPixelSize.x / (northEastPoint.x - southWestPoint.x);
         yScale = mapPixelSize.y / (southWestPoint.y - northEastPoint.y);
+        xTranslate = (southWestPoint.x - mapPixelOrigin.x) * xScale;
+        yTranslate = (northEastPoint.y - mapPixelOrigin.y) * yScale;
         console.log("xScale: " + xScale + ", yScale: " + yScale);
+        console.log("xTranslate: " + xTranslate + ", yTranslate: " + yTranslate);
         transform = "translate(" + xTranslate + "px, " + yTranslate + "px) scale(" + xScale + ", " + yScale + ");";
         console.log(transform);
         return $("#" + this.selector).css({

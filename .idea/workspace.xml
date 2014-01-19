@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a6d0dc2-d409-4b1a-8ad7-47c9f7c22a30" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/static/scale.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/MapBackground.coffee" afterPath="$PROJECT_DIR$/client/js/MapBackground.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/MapBackground.map" afterPath="$PROJECT_DIR$/client/js/MapBackground.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/geohash.html" afterPath="$PROJECT_DIR$/views/geohash.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/static/scale.html" afterPath="$PROJECT_DIR$/client/static/scale.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="geosummary.iws" />
@@ -42,7 +39,11 @@
         <entry file="file://$PROJECT_DIR$/views/geohash.html">
           <provider selected="true" editor-type-id="text-editor">
             <state line="61" column="25" selection-start="1229" selection-end="1229" vertical-scroll-proportion="-27.5" vertical-offset="255" max-vertical-offset="1710">
-              <folding />
+              <folding>
+                <marker date="1389658205000" expanded="true" signature="29:3231" placeholder="..." />
+                <marker date="1389658205000" expanded="true" signature="299:1384" placeholder="..." />
+                <marker date="1389658205000" expanded="true" signature="1407:1415" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,8 +51,12 @@
       <file leaf-file-name="MapBackground.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/MapBackground.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="0" selection-start="1328" selection-end="1328" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
-              <folding />
+            <state line="41" column="66" selection-start="1541" selection-end="1541" vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="885">
+              <folding>
+                <marker date="1389829274000" expanded="true" signature="23:1957" placeholder="..." />
+                <marker date="1389829274000" expanded="true" signature="160:1957" placeholder="..." />
+                <marker date="1389829274000" expanded="true" signature="198:1957" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -59,7 +64,7 @@
       <file leaf-file-name="scale.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/static/scale.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="8" selection-start="272" selection-end="272" vertical-scroll-proportion="0.24475524" vertical-offset="0" max-vertical-offset="858">
+            <state line="60" column="47" selection-start="1914" selection-end="1914" vertical-scroll-proportion="1.0676156" vertical-offset="0" max-vertical-offset="1530">
               <folding />
             </state>
           </provider>
@@ -131,9 +136,9 @@
         <option value="$PROJECT_DIR$/client/js/Application.coffee" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/server/Navigation.coffee" />
-        <option value="$PROJECT_DIR$/client/js/MapBackground.coffee" />
         <option value="$PROJECT_DIR$/views/geohash.html" />
         <option value="$PROJECT_DIR$/client/scale.html" />
+        <option value="$PROJECT_DIR$/client/js/MapBackground.coffee" />
         <option value="$PROJECT_DIR$/client/static/scale.html" />
       </list>
     </option>
@@ -293,7 +298,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="settings" />
-    <property name="last_opened_file_path" value="$USER_HOME$/WorkingArea/geowhatsit/geowhatsit-server" />
+    <property name="last_opened_file_path" value="$USER_HOME$/WorkingArea/bieber" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -453,13 +458,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="15" selection-start="670" selection-end="670" vertical-scroll-proportion="0.0" vertical-offset="123" max-vertical-offset="1215">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/Navigation.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="48" selection-start="870" selection-end="870" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
@@ -467,23 +465,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="15" selection-start="670" selection-end="670" vertical-scroll-proportion="0.0" vertical-offset="123" max-vertical-offset="1215">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/geohash.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="61" column="25" selection-start="1229" selection-end="1229" vertical-scroll-proportion="-27.5" vertical-offset="255" max-vertical-offset="1710">
-          <folding />
+          <folding>
+            <marker date="1389658205000" expanded="true" signature="29:3231" placeholder="..." />
+            <marker date="1389658205000" expanded="true" signature="299:1384" placeholder="..." />
+            <marker date="1389658205000" expanded="true" signature="1407:1415" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/MapBackground.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="1328" selection-end="1328" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
-          <folding />
+        <state line="41" column="66" selection-start="1541" selection-end="1541" vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="885">
+          <folding>
+            <marker date="1389829274000" expanded="true" signature="23:1957" placeholder="..." />
+            <marker date="1389829274000" expanded="true" signature="160:1957" placeholder="..." />
+            <marker date="1389829274000" expanded="true" signature="198:1957" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/static/scale.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="8" selection-start="272" selection-end="272" vertical-scroll-proportion="0.24475524" vertical-offset="0" max-vertical-offset="858">
+        <state line="60" column="47" selection-start="1914" selection-end="1914" vertical-scroll-proportion="1.0676156" vertical-offset="0" max-vertical-offset="1530">
           <folding />
         </state>
       </provider>

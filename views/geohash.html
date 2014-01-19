@@ -4,6 +4,7 @@
 <title>GeoSummary version {{thisPackage.version}}</title>
 <link rel="subresource" href="images">
 <link rel="subresource" href="navigation">
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" />
 
 <style type="text/css">
     html, body
@@ -36,9 +37,7 @@
     }
 
     .navigation .item.loading {
-        background-image: url("/images/ajax-loader.gif");
-        background-repeat: no-repeat;
-        background-position: center center;
+        background: url("/images/ajax-loader.gif") no-repeat center center;
     }
 
     .navigation .row.width8 .item {
@@ -53,7 +52,25 @@
         display: block;
         width: 100%;
     }
+
+    div#background {
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        /*background-color: blue;*/
+        width: 100%;
+        min-height: 100%;
+    }
+
+    /*div#background {*/
+        /*-webkit-transform: translate(-1000px, 10px);*/
+        /*-webkit-transform: scale(.5, 1.15);*/
+    /*}*/
 </style>
+
+<div id="background">
+
+</div>
 
 <div class="navigation" data-bind="with: navigation, visible: navigation" style="display: none">
     <div class="rows" data-bind="foreach: descend.values, css: { height8: descend.values().length == 8, height4: descend.values().length == 4 }">
@@ -78,11 +95,15 @@
 <script src="/bower_components/knockout.js/knockout.js"></script>
 <script src="/bower_components/knockout-mapping/knockout.mapping.js"></script>
 <script src="/bower_components/underscore/underscore-min.js"></script>
+<script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
 <script src="/js/Application.js"></script>
+<script src="/js/MapBackground.js"></script>
 <script type="application/javascript">
     $(function() {
         var app = new Application(window.location.href, "images", "navigation", 1000, 2);
         ko.applyBindings(app.model);
+        new MapBackground("background", app.model.navigation);
+
         app.run();
     });
 </script>

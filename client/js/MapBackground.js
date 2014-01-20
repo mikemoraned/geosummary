@@ -34,7 +34,7 @@
     };
 
     MapBackground.prototype._transform = function(southWest, northEast) {
-      var mapPixelOrigin, mapPixelSize, northEastPoint, rectSize, rectTopLeft, southWestPoint, transform, xScale, xTranslate, yScale, yTranslate;
+      var mapPixelOrigin, mapPixelSize, northEastPoint, prefix, rectSize, rectTopLeft, southWestPoint, transform, transforms, xScale, xTranslate, yScale, yTranslate, _i, _len, _ref;
       console.log("Map: " + this.selector);
       mapPixelOrigin = this.map.getPixelOrigin();
       console.dir(mapPixelOrigin);
@@ -64,9 +64,13 @@
       console.log("xTranslate: " + xTranslate + ", yTranslate: " + yTranslate);
       transform = "translate(" + xTranslate + "px, " + yTranslate + "px) scale(" + xScale + ", " + yScale + ")";
       console.log(transform);
-      return $("#" + this.selector).css({
-        '-webkit-transform': transform
-      });
+      transforms = {};
+      _ref = ['-webkit-transform', '-moz-transform', '-ms-transform', 'transform'];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        prefix = _ref[_i];
+        transforms[prefix] = transform;
+      }
+      return $("#" + this.selector).css(transforms);
     };
 
     return MapBackground;

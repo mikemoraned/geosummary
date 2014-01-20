@@ -65,6 +65,10 @@ class MapBackground
 
     console.log(transform)
 
-    $("#" + @selector).css({'-webkit-transform': transform})
+    transforms = {};
+    for prefix in ['-webkit-transform','-moz-transform','-ms-transform','transform']
+      transforms[prefix] = transform
+
+    $("#" + @selector).css(transforms)
 
 window.MapBackground = MapBackground

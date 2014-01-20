@@ -27,7 +27,7 @@
     </div>
 
     <div id="map2" class="map">
-        
+
     </div>
 
     <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
@@ -45,8 +45,19 @@
             return map;
         };
 
+        var fitBounds = function(map) {
+            var southWest = L.latLng(50.625, -11.25);
+            var northEast = L.latLng(56.25, 0);
+            var bounds = L.latLngBounds(southWest, northEast);
+
+            map.fitBounds(bounds);
+        };
+
         var map1 = referenceMap("map1");
         var map2 = referenceMap("map2");
+
+        fitBounds(map1);
+        fitBounds(map2);
 
     </script>
 </body>

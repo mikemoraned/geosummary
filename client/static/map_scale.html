@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" />
+    <style>
+        #map1 {
+            width: 400px;
+            height: 600px;
+            border: 1px solid green;
+        }
+    </style>
+</head>
+<body>
+    <div id="map1">
+
+    </div>
+
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
+    <script>
+        var map = L.map("map1", { zoomControl:false });
+
+        map.setView([51.505, -0.09], 13);
+
+        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data © OpenStreetMap contributors',
+            maxZoom: 18
+        }).addTo(map);
+    </script>
+</body>
+</html>

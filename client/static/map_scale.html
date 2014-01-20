@@ -30,38 +30,59 @@
 
     </div>
 
+    <script src="/bower_components/zepto/zepto.min.js"></script>
     <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
     <script>
-        var referenceMap = function(id) {
-            var map = L.map(id, { zoomControl:false });
+        $(function(){
+            var referenceMap = function(id) {
+                var map = L.map(id, { zoomControl:false });
 
-            map.setView([51.505, -0.09], 13);
+                map.setView([51.505, -0.09], 13);
 
-            L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: 'Map data © OpenStreetMap contributors',
-                maxZoom: 18
-            }).addTo(map);
+                L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: 'Map data © OpenStreetMap contributors',
+                    maxZoom: 18
+                }).addTo(map);
 
-            return map;
-        };
+                return map;
+            };
 
-        var fitBounds = function(map) {
-            var southWest = L.latLng(50.625, -11.25);
-            var northEast = L.latLng(56.25, 0);
-            var bounds = L.latLngBounds(southWest, northEast);
+            var fitBounds = function(map) {
+                var southWest = L.latLng(50.625, -11.25);
+                var northEast = L.latLng(56.25, 0);
+                var bounds = L.latLngBounds(southWest, northEast);
 
-            map.fitBounds(bounds);
+                map.fitBounds(bounds);
 
-            var boundsRect = L.rectangle(bounds, {color: "#ff7800", weight: 1})
-            boundsRect.addTo(map);
-        };
+                var boundsRect = L.rectangle(bounds, {color: "#ff7800", weight: 1})
+                boundsRect.addTo(map);
+            };
 
-        var map1 = referenceMap("map1");
-        var map2 = referenceMap("map2");
+            var transform = function(id, map) {
+                var xScale = 1;
+                var yScale = 1;
 
-        fitBounds(map1);
-        fitBounds(map2);
+                var xTranslate = 0;
+                var yTranslate = 0;
 
+                console.log("xScale: " + xScale + ", yScale: " + yScale);
+                console.log("xTranslate: " + xTranslate + ", yTranslate: " + yTranslate);
+
+                var transform = "translate(" + xTranslate + "px, " + yTranslate + "px) scale(" + xScale + ", " + yScale + ")";
+
+                console.log(transform);
+
+                $("#" + id).css({'-webkit-transform': transform});
+            };
+
+            var map1 = referenceMap("map1");
+            var map2 = referenceMap("map2");
+
+            fitBounds(map1);
+            fitBounds(map2);
+
+            transform("map2", map2);
+        });
     </script>
 </body>
 </html>

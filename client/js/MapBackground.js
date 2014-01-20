@@ -20,7 +20,10 @@
         southWest = L.latLng(bbox[0], bbox[1]);
         northEast = L.latLng(bbox[2], bbox[3]);
         bounds = L.latLngBounds(southWest, northEast);
-        this.map = L.map(this.selector).fitBounds(bounds);
+        this.map = L.map(this.selector, {
+          zoomControl: false
+        });
+        this.map.fitBounds(bounds);
         L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           attribution: 'Map data © OpenStreetMap contributors',
           maxZoom: 18

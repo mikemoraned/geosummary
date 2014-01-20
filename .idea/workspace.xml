@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3a6d0dc2-d409-4b1a-8ad7-47c9f7c22a30" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/MapBackground.coffee" afterPath="$PROJECT_DIR$/client/js/MapBackground.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/MapBackground.js" afterPath="$PROJECT_DIR$/client/js/MapBackground.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/MapBackground.map" afterPath="$PROJECT_DIR$/client/js/MapBackground.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="geosummary.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,7 +47,7 @@
       <file leaf-file-name="MapBackground.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/js/MapBackground.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="38" selection-start="810" selection-end="810" vertical-scroll-proportion="0.38882422" vertical-offset="11" max-vertical-offset="1125">
+            <state line="21" column="15" selection-start="687" selection-end="758" vertical-scroll-proportion="0.3538999" vertical-offset="11" max-vertical-offset="1125">
               <folding />
             </state>
           </provider>
@@ -493,7 +492,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/js/MapBackground.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="38" selection-start="810" selection-end="810" vertical-scroll-proportion="0.38882422" vertical-offset="11" max-vertical-offset="1125">
+        <state line="21" column="15" selection-start="687" selection-end="758" vertical-scroll-proportion="0.3538999" vertical-offset="11" max-vertical-offset="1125">
           <folding />
         </state>
       </provider>

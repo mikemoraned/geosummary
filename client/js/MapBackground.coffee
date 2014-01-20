@@ -18,8 +18,8 @@ class MapBackground
         maxZoom: 18
       }).addTo(@map)
 
-      boundsRect = L.rectangle(bounds, {color: "#ff7800", weight: 1})
-      boundsRect.addTo(@map)
+#      boundsRect = L.rectangle(bounds, {color: "#ff7800", weight: 1})
+#      boundsRect.addTo(@map)
 
       @_transform(southWest, northEast)
 

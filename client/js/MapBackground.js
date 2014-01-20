@@ -14,7 +14,7 @@
     }
 
     MapBackground.prototype._navigationChanged = function() {
-      var bbox, bounds, boundsRect, northEast, southWest;
+      var bbox, bounds, northEast, southWest;
       if ((this.navigation() != null) && (this.map == null)) {
         console.dir(this.navigation());
         bbox = this.navigation().descend.geo_bbox();
@@ -29,11 +29,6 @@
           attribution: 'Map data © OpenStreetMap contributors',
           maxZoom: 18
         }).addTo(this.map);
-        boundsRect = L.rectangle(bounds, {
-          color: "#ff7800",
-          weight: 1
-        });
-        boundsRect.addTo(this.map);
         return this._transform(southWest, northEast);
       }
     };

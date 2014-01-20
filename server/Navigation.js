@@ -13,6 +13,7 @@
     function Navigation() {
       this._toUrl = __bind(this._toUrl, this);
       this._downFrom = __bind(this._downFrom, this);
+      this.hashesBelow = __bind(this.hashesBelow, this);
       this.navigateFrom = __bind(this.navigateFrom, this);
     }
 
@@ -27,19 +28,21 @@
       return success(nav);
     };
 
-    Navigation.prototype._downFrom = function(baseGeohash) {
-      var base32, char, geohashes, rows,
-        _this = this;
+    Navigation.prototype.hashesBelow = function(baseGeohash) {
+      var base32, char, _i, _len, _results;
       base32 = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k', 'm', 'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-      geohashes = (function() {
-        var _i, _len, _results;
-        _results = [];
-        for (_i = 0, _len = base32.length; _i < _len; _i++) {
-          char = base32[_i];
-          _results.push(baseGeohash + char);
-        }
-        return _results;
-      })();
+      _results = [];
+      for (_i = 0, _len = base32.length; _i < _len; _i++) {
+        char = base32[_i];
+        _results.push(baseGeohash + char);
+      }
+      return _results;
+    };
+
+    Navigation.prototype._downFrom = function(baseGeohash) {
+      var geohashes, rows,
+        _this = this;
+      geohashes = this.hashesBelow(baseGeohash);
       rows = _.chain(geohashes).groupBy(function(g) {
         return geohash.decode(g).latitude;
       }).values().reverse().value();

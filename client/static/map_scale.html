@@ -18,6 +18,7 @@
 
         #map2 {
             border: 1px solid red;
+            z-index: -1;
         }
     </style>
 </head>
@@ -47,20 +48,51 @@
                 return map;
             };
 
-            var fitBounds = function(map) {
-                var southWest = L.latLng(50.625, -11.25);
-                var northEast = L.latLng(56.25, 0);
-                var bounds = L.latLngBounds(southWest, northEast);
+            var southWest = L.latLng(50.625, -11.25);
+            var northEast = L.latLng(56.25, 0);
+            var bounds = L.latLngBounds(southWest, northEast);
 
+            var fitBounds = function(map) {
                 map.fitBounds(bounds);
 
-                var boundsRect = L.rectangle(bounds, {color: "#ff7800", weight: 1})
+                var boundsRect = L.rectangle(bounds, {color: "#ff7800", weight: 1});
                 boundsRect.addTo(map);
             };
 
             var transform = function(id, map) {
-                var xScale = 1;
-                var yScale = 1;
+                console.log("Map: " + id);
+
+                var mapPixelOrigin = map.getPixelOrigin();
+                console.dir(mapPixelOrigin);
+                var mapPixelSize = map.getSize();
+                console.dir(mapPixelSize);
+
+                var southWestPoint = map.project(southWest);
+                var northEastPoint = map.project(northEast);
+                console.dir(southWestPoint);
+                console.dir(northEastPoint);
+
+                var rectTopLeft = {
+                    x: southWestPoint.x - mapPixelOrigin.x,
+                    y: northEastPoint.y - mapPixelOrigin.y
+                };
+
+                var rectSize = {
+                    width: northEastPoint.x - southWestPoint.x,
+                    height: southWestPoint.y - northEastPoint.y
+                };
+
+                console.log("topLeft:");
+                console.dir(rectTopLeft);
+
+                console.log("rectSize:");
+                console.dir(rectSize);
+
+//                var xScale = 1;
+//                var yScale = 1;
+
+                var xScale = mapPixelSize.x / rectSize.width;
+                var yScale = mapPixelSize.y / rectSize.height;
 
                 var xTranslate = 0;
                 var yTranslate = 0;
@@ -81,6 +113,7 @@
             fitBounds(map1);
             fitBounds(map2);
 
+//            transform("map1", map1);
             transform("map2", map2);
         });
     </script>

@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang=en>
+<meta charset=utf-8>
+<title>GeoSummary version {{thisPackage.version}}</title>
+
+<ul>
+    {{#hashesBelow}}
+    <li>
+        <a href="/{{.}}/images">{{.}} images</a>
+        <a href="/{{.}}/crawl">{{.}} crawl...</a>
+    </li>
+    {{/hashesBelow}}
+</ul>

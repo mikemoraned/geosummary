@@ -27,6 +27,27 @@ app.get('/', (req, resp) ->
   })
 )
 
+maxCrawlDepth = 4
+app.get('/:geohash/crawl', (req, resp) ->
+  geohash = req.params.geohash
+  hashesBelow =
+    if geohash.length <= maxCrawlDepth
+      navigation.hashesBelow(geohash)
+    else
+      []
+  resp.render("crawl", {
+    thisPackage: require("./package.json")
+    hashesBelow: hashesBelow
+  })
+)
+
+app.get('/crawl', (req, resp) ->
+  resp.render("crawl", {
+    thisPackage: require("./package.json")
+    hashesBelow: navigation.hashesBelow("")
+  })
+)
+
 # geo-hash page
 app.get('/:geohash', (req, resp) ->
   resp.render("geohash", {
@@ -68,6 +89,8 @@ app.get('/:geohash/navigation', (req, resp) ->
       })
   )
 )
+
+
 
 port = process.env.PORT || 9000
 console.log("Attempting to listen on %s ...", port)

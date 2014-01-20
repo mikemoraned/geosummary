@@ -51,6 +51,9 @@
             var bounds = L.latLngBounds(southWest, northEast);
 
             map.fitBounds(bounds);
+
+            var boundsRect = L.rectangle(bounds, {color: "#ff7800", weight: 1})
+            boundsRect.addTo(map);
         };
 
         var map1 = referenceMap("map1");

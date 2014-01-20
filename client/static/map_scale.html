@@ -5,28 +5,49 @@
 
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" />
     <style>
-        #map1 {
+        .map {
+            float: left;
             width: 400px;
             height: 600px;
+            margin-left: 10px;
+        }
+
+        #map1 {
             border: 1px solid green;
+        }
+
+        #map2 {
+            border: 1px solid red;
         }
     </style>
 </head>
 <body>
-    <div id="map1">
+    <div id="map1" class="map">
 
+    </div>
+
+    <div id="map2" class="map">
+        
     </div>
 
     <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
     <script>
-        var map = L.map("map1", { zoomControl:false });
+        var referenceMap = function(id) {
+            var map = L.map(id, { zoomControl:false });
 
-        map.setView([51.505, -0.09], 13);
+            map.setView([51.505, -0.09], 13);
 
-        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: 'Map data © OpenStreetMap contributors',
-            maxZoom: 18
-        }).addTo(map);
+            L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: 'Map data © OpenStreetMap contributors',
+                maxZoom: 18
+            }).addTo(map);
+
+            return map;
+        };
+
+        var map1 = referenceMap("map1");
+        var map2 = referenceMap("map2");
+
     </script>
 </body>
 </html>

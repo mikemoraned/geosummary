@@ -21,36 +21,50 @@ class MapBackground
       boundsRect = L.rectangle(bounds, {color: "#ff7800", weight: 1})
       boundsRect.addTo(@map)
 
-      mapPixelOrigin = @map.getPixelOrigin()
-      console.dir(mapPixelOrigin)
-      mapPixelSize = @map.getSize()
-      console.dir(mapPixelSize)
+      @_transform(southWest, northEast)
 
-      southWestPoint = @map.project(southWest)
-      northEastPoint = @map.project(northEast)
-      console.dir(southWestPoint)
-      console.dir(northEastPoint)
+  _transform: (southWest, northEast) =>
+    console.log("Map: " + @selector)
+  
+    mapPixelOrigin = @map.getPixelOrigin()
+    console.dir(mapPixelOrigin)
+    mapPixelSize = @map.getSize()
+    console.dir(mapPixelSize)
+  
+    southWestPoint = @map.project(southWest)
+    northEastPoint = @map.project(northEast)
+    console.dir(southWestPoint)
+    console.dir(northEastPoint)
+  
+    rectTopLeft = {
+      x: southWestPoint.x - mapPixelOrigin.x
+      y: northEastPoint.y - mapPixelOrigin.y
+    }
+  
+    rectSize = {
+      width: northEastPoint.x - southWestPoint.x
+      height: southWestPoint.y - northEastPoint.y
+    }
+  
+    console.log("topLeft:")
+    console.dir(rectTopLeft)
+  
+    console.log("rectSize:")
+    console.dir(rectSize)
 
-#      xScale = 1
-#      yScale = 1
-      xScale = mapPixelSize.x / (northEastPoint.x - southWestPoint.x)
-      yScale = mapPixelSize.y / (southWestPoint.y - northEastPoint.y)
+    xScale = mapPixelSize.x / rectSize.width
+    yScale = mapPixelSize.y / rectSize.height
+  
+    xTranslate = 0
+    yTranslate = 0
+  
+    console.log("xScale: " + xScale + ", yScale: " + yScale)
+    console.log("xTranslate: " + xTranslate + ", yTranslate: " + yTranslate)
 
-      #      xTranslate = 0
-      #      yTranslate = 0
-#      xTranslate = -1 * (southWestPoint.x - mapPixelOrigin.x)
-#      yTranslate = -1 * (northEastPoint.y - mapPixelOrigin.y)
-      xTranslate = (southWestPoint.x - mapPixelOrigin.x) * (xScale)
-      yTranslate = (northEastPoint.y - mapPixelOrigin.y) * (yScale)
+    transform = "translate(" + xTranslate + "px, " + yTranslate + "px) scale(" + xScale + ", " + yScale + ")"
 
-      console.log("xScale: #{xScale}, yScale: #{yScale}")
-      console.log("xTranslate: #{xTranslate}, yTranslate: #{yTranslate}")
+    console.log(transform)
 
-      transform = "translate(#{xTranslate}px, #{yTranslate}px) scale(#{xScale}, #{yScale});"
-#      transform = "scale(#{xScale}, #{yScale}) translate(#{xTranslate}px, #{yTranslate}px);"
-
-      console.log(transform)
-
-      $("##{@selector}").css({'-webkit-transform': transform})
+    $("#" + @selector).css({'-webkit-transform': transform})
 
 window.MapBackground = MapBackground

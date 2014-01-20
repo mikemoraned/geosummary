@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a6d0dc2-d409-4b1a-8ad7-47c9f7c22a30" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/static/map_scale.html" afterPath="$PROJECT_DIR$/client/static/map_scale.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/MapBackground.coffee" afterPath="$PROJECT_DIR$/client/js/MapBackground.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/MapBackground.js" afterPath="$PROJECT_DIR$/client/js/MapBackground.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/js/MapBackground.map" afterPath="$PROJECT_DIR$/client/js/MapBackground.map" />
     </list>
     <ignored path="geosummary.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,19 +45,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapBackground.coffee" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MapBackground.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/js/MapBackground.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="33" selection-start="778" selection-end="1081" vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="915">
+            <state line="23" column="38" selection-start="810" selection-end="810" vertical-scroll-proportion="0.38882422" vertical-offset="11" max-vertical-offset="1125">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="map_scale.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="map_scale.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/static/map_scale.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="23" selection-start="424" selection-end="424" vertical-scroll-proportion="0.33532935" vertical-offset="20" max-vertical-offset="1890">
+            <state line="107" column="14" selection-start="1557" selection-end="3253" vertical-scroll-proportion="-31.666666" vertical-offset="845" max-vertical-offset="1890">
               <folding />
             </state>
           </provider>
@@ -139,8 +140,8 @@
         <option value="$PROJECT_DIR$/client/scale.html" />
         <option value="$PROJECT_DIR$/client/static/scale.html" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/client/js/MapBackground.coffee" />
         <option value="$PROJECT_DIR$/client/static/map_scale.html" />
+        <option value="$PROJECT_DIR$/client/js/MapBackground.coffee" />
       </list>
     </option>
   </component>
@@ -483,16 +484,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/MapBackground.coffee">
+    <entry file="file://$PROJECT_DIR$/client/static/map_scale.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="33" selection-start="778" selection-end="1081" vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="915">
+        <state line="107" column="14" selection-start="1557" selection-end="3253" vertical-scroll-proportion="-31.666666" vertical-offset="845" max-vertical-offset="1890">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/static/map_scale.html">
+    <entry file="file://$PROJECT_DIR$/client/js/MapBackground.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="23" selection-start="424" selection-end="424" vertical-scroll-proportion="0.33532935" vertical-offset="20" max-vertical-offset="1890">
+        <state line="23" column="38" selection-start="810" selection-end="810" vertical-scroll-proportion="0.38882422" vertical-offset="11" max-vertical-offset="1125">
           <folding />
         </state>
       </provider>

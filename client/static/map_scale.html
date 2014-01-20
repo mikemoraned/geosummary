@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" />
+    <style>
+        .map {
+            float: left;
+            width: 400px;
+            height: 600px;
+            margin-left: 10px;
+        }
+
+        #map1 {
+            border: 1px solid green;
+        }
+
+        #map2 {
+            border: 1px solid red;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div id="map1" class="map">
+
+    </div>
+
+    <div id="map2" class="map">
+
+    </div>
+
+    <script src="/bower_components/zepto/zepto.min.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
+    <script>
+        $(function(){
+            var referenceMap = function(id) {
+                var map = L.map(id, { zoomControl:false });
+
+                map.setView([51.505, -0.09], 13);
+
+                L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: 'Map data © OpenStreetMap contributors',
+                    maxZoom: 18
+                }).addTo(map);
+
+                return map;
+            };
+
+            var southWest = L.latLng(50.625, -11.25);
+            var northEast = L.latLng(56.25, 0);
+            var bounds = L.latLngBounds(southWest, northEast);
+
+            var fitBounds = function(map) {
+                map.fitBounds(bounds);
+
+                var boundsRect = L.rectangle(bounds, {color: "#ff7800", weight: 1});
+                boundsRect.addTo(map);
+            };
+
+            var transform = function(id, map) {
+                console.log("Map: " + id);
+
+                var mapPixelOrigin = map.getPixelOrigin();
+                console.dir(mapPixelOrigin);
+                var mapPixelSize = map.getSize();
+                console.dir(mapPixelSize);
+
+                var southWestPoint = map.project(southWest);
+                var northEastPoint = map.project(northEast);
+                console.dir(southWestPoint);
+                console.dir(northEastPoint);
+
+                var rectTopLeft = {
+                    x: southWestPoint.x - mapPixelOrigin.x,
+                    y: northEastPoint.y - mapPixelOrigin.y
+                };
+
+                var rectSize = {
+                    width: northEastPoint.x - southWestPoint.x,
+                    height: southWestPoint.y - northEastPoint.y
+                };
+
+                console.log("topLeft:");
+                console.dir(rectTopLeft);
+
+                console.log("rectSize:");
+                console.dir(rectSize);
+
+//                var xScale = 1;
+//                var yScale = 1;
+
+                var xScale = mapPixelSize.x / rectSize.width;
+                var yScale = mapPixelSize.y / rectSize.height;
+
+                var xTranslate = 0;
+                var yTranslate = 0;
+
+                console.log("xScale: " + xScale + ", yScale: " + yScale);
+                console.log("xTranslate: " + xTranslate + ", yTranslate: " + yTranslate);
+
+                var transform = "translate(" + xTranslate + "px, " + yTranslate + "px) scale(" + xScale + ", " + yScale + ")";
+
+                console.log(transform);
+
+                $("#" + id).css({'-webkit-transform': transform});
+            };
+
+            var map1 = referenceMap("map1");
+            var map2 = referenceMap("map2");
+
+            fitBounds(map1);
+            fitBounds(map2);
+
+//            transform("map1", map1);
+            transform("map2", map2);
+        });
+    </script>
+</body>
+</html>

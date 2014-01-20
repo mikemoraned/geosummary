@@ -7,49 +7,66 @@
     function MapBackground(selector, navigation) {
       this.selector = selector;
       this.navigation = navigation;
+      this._transform = __bind(this._transform, this);
       this._navigationChanged = __bind(this._navigationChanged, this);
       this.map = null;
       this.navigation.subscribe(this._navigationChanged);
     }
 
     MapBackground.prototype._navigationChanged = function() {
-      var bbox, bounds, boundsRect, mapPixelOrigin, mapPixelSize, northEast, northEastPoint, southWest, southWestPoint, transform, xScale, xTranslate, yScale, yTranslate;
+      var bbox, bounds, northEast, southWest;
       if ((this.navigation() != null) && (this.map == null)) {
         console.dir(this.navigation());
         bbox = this.navigation().descend.geo_bbox();
         southWest = L.latLng(bbox[0], bbox[1]);
         northEast = L.latLng(bbox[2], bbox[3]);
         bounds = L.latLngBounds(southWest, northEast);
-        this.map = L.map(this.selector).fitBounds(bounds);
+        this.map = L.map(this.selector, {
+          zoomControl: false
+        });
+        this.map.fitBounds(bounds);
         L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
           attribution: 'Map data © OpenStreetMap contributors',
           maxZoom: 18
         }).addTo(this.map);
-        boundsRect = L.rectangle(bounds, {
-          color: "#ff7800",
-          weight: 1
-        });
-        boundsRect.addTo(this.map);
-        mapPixelOrigin = this.map.getPixelOrigin();
-        console.dir(mapPixelOrigin);
-        mapPixelSize = this.map.getSize();
-        console.dir(mapPixelSize);
-        southWestPoint = this.map.project(southWest);
-        northEastPoint = this.map.project(northEast);
-        console.dir(southWestPoint);
-        console.dir(northEastPoint);
-        xScale = mapPixelSize.x / (northEastPoint.x - southWestPoint.x);
-        yScale = mapPixelSize.y / (southWestPoint.y - northEastPoint.y);
-        xTranslate = (southWestPoint.x - mapPixelOrigin.x) * xScale;
-        yTranslate = (northEastPoint.y - mapPixelOrigin.y) * yScale;
-        console.log("xScale: " + xScale + ", yScale: " + yScale);
-        console.log("xTranslate: " + xTranslate + ", yTranslate: " + yTranslate);
-        transform = "translate(" + xTranslate + "px, " + yTranslate + "px) scale(" + xScale + ", " + yScale + ");";
-        console.log(transform);
-        return $("#" + this.selector).css({
-          '-webkit-transform': transform
-        });
+        return this._transform(southWest, northEast);
       }
+    };
+
+    MapBackground.prototype._transform = function(southWest, northEast) {
+      var mapPixelOrigin, mapPixelSize, northEastPoint, rectSize, rectTopLeft, southWestPoint, transform, xScale, xTranslate, yScale, yTranslate;
+      console.log("Map: " + this.selector);
+      mapPixelOrigin = this.map.getPixelOrigin();
+      console.dir(mapPixelOrigin);
+      mapPixelSize = this.map.getSize();
+      console.dir(mapPixelSize);
+      southWestPoint = this.map.project(southWest);
+      northEastPoint = this.map.project(northEast);
+      console.dir(southWestPoint);
+      console.dir(northEastPoint);
+      rectTopLeft = {
+        x: southWestPoint.x - mapPixelOrigin.x,
+        y: northEastPoint.y - mapPixelOrigin.y
+      };
+      rectSize = {
+        width: northEastPoint.x - southWestPoint.x,
+        height: southWestPoint.y - northEastPoint.y
+      };
+      console.log("topLeft:");
+      console.dir(rectTopLeft);
+      console.log("rectSize:");
+      console.dir(rectSize);
+      xScale = mapPixelSize.x / rectSize.width;
+      yScale = mapPixelSize.y / rectSize.height;
+      xTranslate = 0;
+      yTranslate = 0;
+      console.log("xScale: " + xScale + ", yScale: " + yScale);
+      console.log("xTranslate: " + xTranslate + ", yTranslate: " + yTranslate);
+      transform = "translate(" + xTranslate + "px, " + yTranslate + "px) scale(" + xScale + ", " + yScale + ")";
+      console.log(transform);
+      return $("#" + this.selector).css({
+        '-webkit-transform': transform
+      });
     };
 
     return MapBackground;

@@ -20,9 +20,9 @@ app.set('views', __dirname + '/views')
 # static, loaded client-side
 app.use(express.static(__dirname + '/client'));
 
-# home page
-app.get('/', (req, resp) ->
-  resp.render("index", {
+# about page
+app.get('/about', (req, resp) ->
+  resp.render("about", {
     thisPackage: require("./package.json")
   })
 )
@@ -77,7 +77,6 @@ handleImages = (req, resp) ->
   geohash = geohashFromRequest(req)
   imageFinder.findImages(geohash,
   (result) =>
-    console.dir(result)
     secondsExpiry = 24 * 60 * 60
     resp.setHeader "Cache-Control", "public, max-age=#{secondsExpiry}"
     resp.setHeader "Expires", new Date(Date.now() + (secondsExpiry * 1000)).toUTCString()
@@ -94,15 +93,12 @@ app.get('/images', handleImages)
 app.get('/:geohash/images', handleImages)
 
 # geo-hash page
-app.get('/:geohash', (req, resp) ->
+handleGeohash = (req, resp) ->
   resp.render("geohash", {
     thisPackage: require("./package.json")
   })
-)
-
-
-
-
+app.get('/:geohash', handleGeohash)
+app.get('/', handleGeohash)
 
 port = process.env.PORT || 9000
 console.log("Attempting to listen on %s ...", port)

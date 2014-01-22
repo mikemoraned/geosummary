@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a6d0dc2-d409-4b1a-8ad7-47c9f7c22a30" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/area.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.coffee" afterPath="$PROJECT_DIR$/web.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.js" afterPath="$PROJECT_DIR$/web.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web.map" afterPath="$PROJECT_DIR$/web.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="geosummary.iws" />
@@ -29,16 +31,16 @@
       <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="20" selection-start="77" selection-end="77" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="645">
+            <state line="3" column="20" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="645">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="23" selection-start="519" selection-end="519" vertical-scroll-proportion="0.2978972" vertical-offset="0" max-vertical-offset="856">
+            <state line="17" column="23" selection-start="519" selection-end="519" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="435">
               <folding />
             </state>
           </provider>
@@ -47,7 +49,7 @@
       <file leaf-file-name="geohash.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/geohash.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="0" selection-start="2508" selection-end="2568" vertical-scroll-proportion="-33.125" vertical-offset="600" max-vertical-offset="1710">
+            <state line="93" column="0" selection-start="2508" selection-end="2568" vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="1710">
               <folding />
             </state>
           </provider>
@@ -80,10 +82,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.coffee" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="web.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="17" selection-start="672" selection-end="672" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1560">
+            <state line="92" column="10" selection-start="2206" selection-end="2206" vertical-scroll-proportion="0.8639456" vertical-offset="618" max-vertical-offset="1740">
               <folding />
             </state>
           </provider>
@@ -92,7 +94,7 @@
       <file leaf-file-name="crawl.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/crawl.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="48" selection-start="194" selection-end="194" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="270">
+            <state line="8" column="48" selection-start="194" selection-end="194" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="270">
               <folding />
             </state>
           </provider>
@@ -101,7 +103,7 @@
       <file leaf-file-name="Navigation.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/Navigation.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="40" selection-start="815" selection-end="815" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+            <state line="23" column="40" selection-start="815" selection-end="815" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="705">
               <folding />
             </state>
           </provider>
@@ -138,9 +140,9 @@
         <option value="$PROJECT_DIR$/client/js/MapBackground.coffee" />
         <option value="$PROJECT_DIR$/server/Navigation.coffee" />
         <option value="$PROJECT_DIR$/views/crawl.html" />
-        <option value="$PROJECT_DIR$/web.coffee" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/views/index.html" />
+        <option value="$PROJECT_DIR$/web.coffee" />
       </list>
     </option>
   </component>
@@ -302,8 +304,8 @@
     <property name="last_opened_file_path" value="$USER_HOME$/WorkingArea/bieber" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -315,6 +317,14 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -325,23 +335,15 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -364,13 +366,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="22" width="1676" height="1028" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24984875" sideWeight="0.67142856" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24984875" sideWeight="0.67142856" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -397,6 +399,13 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/server/Navigation.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="40" selection-start="815" selection-end="815" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="705">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.foreman">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="0" selection-start="11" selection-end="11" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120" />
@@ -454,7 +463,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/geohash.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="0" selection-start="2508" selection-end="2568" vertical-scroll-proportion="-33.125" vertical-offset="600" max-vertical-offset="1710">
+        <state line="93" column="0" selection-start="2508" selection-end="2568" vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="1710">
           <folding />
         </state>
       </provider>
@@ -468,28 +477,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/crawl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="48" selection-start="194" selection-end="194" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="270">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="17" selection-start="672" selection-end="672" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1560">
+        <state line="8" column="48" selection-start="194" selection-end="194" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="270">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="20" selection-start="77" selection-end="77" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="645">
+        <state line="3" column="20" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="645">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="23" selection-start="519" selection-end="519" vertical-scroll-proportion="0.2978972" vertical-offset="0" max-vertical-offset="856">
+        <state line="17" column="23" selection-start="519" selection-end="519" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="435">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="10" selection-start="2206" selection-end="2206" vertical-scroll-proportion="0.8639456" vertical-offset="618" max-vertical-offset="1740">
           <folding />
         </state>
       </provider>

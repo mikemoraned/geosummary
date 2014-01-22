@@ -48,6 +48,51 @@ app.get('/crawl', (req, resp) ->
   })
 )
 
+geohashFromRequest = (req) ->
+  if req.params.geohash?
+    req.params.geohash
+  else
+    ""
+
+Navigation = require("./server/Navigation")
+navigation = new Navigation()
+
+handleNav = (req, resp) ->
+  geohash = geohashFromRequest(req)
+  navigation.navigateFrom(geohash,
+    (result) =>
+      console.dir(result)
+      resp.send({
+        'geohash' : geohash,
+        'navigation' : result
+      })
+    )
+app.get('/navigation', handleNav)
+app.get('/:geohash/navigation', handleNav)
+
+FlickrImageFinder = require("./server/FlickrImageFinder")
+imageFinder = new FlickrImageFinder(process.env['FLICKR_API_KEY'], "s")
+
+handleImages = (req, resp) ->
+  geohash = geohashFromRequest(req)
+  imageFinder.findImages(geohash,
+  (result) =>
+    console.dir(result)
+    secondsExpiry = 24 * 60 * 60
+    resp.setHeader "Cache-Control", "public, max-age=#{secondsExpiry}"
+    resp.setHeader "Expires", new Date(Date.now() + (secondsExpiry * 1000)).toUTCString()
+    resp.send({
+      'geohash' : geohash,
+      'images' : result
+    })
+  ,
+  () ->
+    console.log("Error")
+    resp.sendStatus(404)
+  )
+app.get('/images', handleImages)
+app.get('/:geohash/images', handleImages)
+
 # geo-hash page
 app.get('/:geohash', (req, resp) ->
   resp.render("geohash", {
@@ -55,40 +100,7 @@ app.get('/:geohash', (req, resp) ->
   })
 )
 
-FlickrImageFinder = require("./server/FlickrImageFinder")
-imageFinder = new FlickrImageFinder(process.env['FLICKR_API_KEY'], "s")
 
-app.get('/:geohash/images', (req, resp) ->
-  imageFinder.findImages(req.params.geohash,
-    (result) =>
-      console.dir(result)
-      secondsExpiry = 24 * 60 * 60
-      resp.setHeader "Cache-Control", "public, max-age=#{secondsExpiry}"
-      resp.setHeader "Expires", new Date(Date.now() + (secondsExpiry * 1000)).toUTCString()
-      resp.send({
-        'geohash' : req.params.geohash,
-        'images' : result
-      })
-    ,
-    () ->
-      console.log("Error")
-      resp.sendStatus(404)
-  )
-)
-
-Navigation = require("./server/Navigation")
-navigation = new Navigation()
-
-app.get('/:geohash/navigation', (req, resp) ->
-  navigation.navigateFrom(req.params.geohash,
-    (result) =>
-      console.dir(result)
-      resp.send({
-        'geohash' : req.params.geohash,
-        'navigation' : result
-      })
-  )
-)
 
 
 

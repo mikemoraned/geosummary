@@ -62,11 +62,24 @@
         min-height: 100%;
     }
 
-    /*div#background {*/
-        /*-webkit-transform: translate(-1000px, 10px);*/
-        /*-webkit-transform: scale(.5, 1.15);*/
-    /*}*/
+    div#about {
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        padding-right: 20px;
+        background-color: gray;
+        border: 5px solid gray;
+        border-bottom-left-radius: 5px;
+    }
+
+    div#about a {
+        color: white;
+    }
 </style>
+
+<div id="about">
+    <a href="/about">About</a>
+</div>
 
 <div id="background">
 
@@ -100,7 +113,7 @@
 <script src="/js/MapBackground.js"></script>
 <script type="application/javascript">
     $(function() {
-        var app = new Application(window.location.href, "images", "navigation", 1000, 2);
+        var app = new Application(window.location.href, "images", "navigation", 100000, 2);
         ko.applyBindings(app.model);
         new MapBackground("background", app.model.navigation);
 

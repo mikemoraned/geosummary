@@ -1,5 +1,6 @@
 express = require("express")
 logfmt = require("logfmt")
+_ = require("underscore")._
 app = express()
 
 app.use(logfmt.requestLogger())
@@ -20,9 +21,9 @@ app.set('views', __dirname + '/views')
 # static, loaded client-side
 app.use(express.static(__dirname + '/client'));
 
-# home page
-app.get('/', (req, resp) ->
-  resp.render("index", {
+# about page
+app.get('/about', (req, resp) ->
+  resp.render("about", {
     thisPackage: require("./package.json")
   })
 )
@@ -48,49 +49,63 @@ app.get('/crawl', (req, resp) ->
   })
 )
 
-# geo-hash page
-app.get('/:geohash', (req, resp) ->
-  resp.render("geohash", {
-    thisPackage: require("./package.json")
-  })
-)
-
-FlickrImageFinder = require("./server/FlickrImageFinder")
-imageFinder = new FlickrImageFinder(process.env['FLICKR_API_KEY'], "s")
-
-app.get('/:geohash/images', (req, resp) ->
-  imageFinder.findImages(req.params.geohash,
-    (result) =>
-      console.dir(result)
-      secondsExpiry = 24 * 60 * 60
-      resp.setHeader "Cache-Control", "public, max-age=#{secondsExpiry}"
-      resp.setHeader "Expires", new Date(Date.now() + (secondsExpiry * 1000)).toUTCString()
-      resp.send({
-        'geohash' : req.params.geohash,
-        'images' : result
-      })
-    ,
-    () ->
-      console.log("Error")
-      resp.sendStatus(404)
-  )
-)
+geohashFromRequest = (req) ->
+  if req.params.geohash?
+    req.params.geohash
+  else
+    ""
 
 Navigation = require("./server/Navigation")
 navigation = new Navigation()
 
-app.get('/:geohash/navigation', (req, resp) ->
-  navigation.navigateFrom(req.params.geohash,
+handleNav = (req, resp) ->
+  geohash = geohashFromRequest(req)
+  navigation.navigateFrom(geohash,
     (result) =>
       console.dir(result)
       resp.send({
-        'geohash' : req.params.geohash,
+        'geohash' : geohash,
         'navigation' : result
       })
+    )
+app.get('/navigation', handleNav)
+app.get('/:geohash/navigation', handleNav)
+
+FlickrImageFinder = require("./server/FlickrImageFinder")
+imageFinder = new FlickrImageFinder(process.env['FLICKR_API_KEY'], "s")
+
+handleImages = (req, resp) ->
+  geohash = geohashFromRequest(req)
+  related = _.map(navigation.hashesBelow(geohash), (below) -> {
+    name: below
+    href: "/#{below}/images"
+  })
+  imageFinder.findImages(geohash,
+  (result) =>
+    console.dir(result)
+    secondsExpiry = 24 * 60 * 60
+    resp.setHeader "Cache-Control", "public, max-age=#{secondsExpiry}"
+    resp.setHeader "Expires", new Date(Date.now() + (secondsExpiry * 1000)).toUTCString()
+    resp.send({
+      'geohash' : geohash
+      'related' : related
+      'images' : result
+    })
+  ,
+  () ->
+    console.log("Error")
+    resp.sendStatus(404)
   )
-)
+app.get('/images', handleImages)
+app.get('/:geohash/images', handleImages)
 
-
+# geo-hash page
+handleGeohash = (req, resp) ->
+  resp.render("geohash", {
+    thisPackage: require("./package.json")
+  })
+app.get('/:geohash', handleGeohash)
+app.get('/', handleGeohash)
 
 port = process.env.PORT || 9000
 console.log("Attempting to listen on %s ...", port)

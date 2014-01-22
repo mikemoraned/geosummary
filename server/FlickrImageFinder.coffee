@@ -13,9 +13,12 @@ class FlickrImageFinder
       @apiKey)
 
   findImages: (geohash, success, error) =>
-    console.log(geohash)
+    url =
+      if geohash.length > 0
+        util.format("%s&bbox=%s", @fixedURI, @_boundingBox(geohash))
+      else
+        @fixedURI
 
-    url = util.format("%s&bbox=%s", @fixedURI, @_boundingBox(geohash))
     console.log("url: %s", url)
     HTTP.request(url).then(
       (result) =>
@@ -48,20 +51,21 @@ class FlickrImageFinder
     # (see http://www.flickr.com/services/api/misc.urls.html)
 
     if flickrSearchJson.photos?.photo?
+      console.log("Num results returned: #{flickrSearchJson.photos.photo.length}")
       _.map(flickrSearchJson.photos.photo, (p) =>
         {
-        'img_href'  : util.format("http://farm%s.staticflickr.com/%s/%s_%s_%s.jpg", p.farm, p.server, p.id, p.secret, @size)
-        'info_href' : util.format("http://flic.kr/p/%s", Base58.encode(p.id))
-        'geohash' : ngeohash.encode(p.latitude, p.longitude)
-        'name' : p.title
-        'authority' : {
-          'name' : p.ownername
-          'href' : util.format("http://flickr.com/photos/%s", p.owner)
-        }
+          'img_id' : p.id
+          'img_href'  : util.format("http://farm%s.staticflickr.com/%s/%s_%s_%s.jpg", p.farm, p.server, p.id, p.secret, @size)
+          'info_href' : util.format("http://flic.kr/p/%s", Base58.encode(p.id))
+          'geohash' : ngeohash.encode(p.latitude, p.longitude)
+          'name' : p.title
+          'authority' : {
+            'name' : p.ownername
+            'href' : util.format("http://flickr.com/photos/%s", p.owner)
+          }
         }
       )
     else
-      console.dir(flickrSearchJson)
       {}
 
 module.exports = FlickrImageFinder

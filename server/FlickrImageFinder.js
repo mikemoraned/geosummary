@@ -27,8 +27,7 @@
     FlickrImageFinder.prototype.findImages = function(geohash, success, error) {
       var url,
         _this = this;
-      console.log(geohash);
-      url = util.format("%s&bbox=%s", this.fixedURI, this._boundingBox(geohash));
+      url = geohash.length > 0 ? util.format("%s&bbox=%s", this.fixedURI, this._boundingBox(geohash)) : this.fixedURI;
       console.log("url: %s", url);
       return HTTP.request(url).then(function(result) {
         console.log("Status: %s", result.status);
@@ -60,8 +59,10 @@
       var _ref,
         _this = this;
       if (((_ref = flickrSearchJson.photos) != null ? _ref.photo : void 0) != null) {
+        console.log("Num results returned: " + flickrSearchJson.photos.photo.length);
         return _.map(flickrSearchJson.photos.photo, function(p) {
           return {
+            'img_id': p.id,
             'img_href': util.format("http://farm%s.staticflickr.com/%s/%s_%s_%s.jpg", p.farm, p.server, p.id, p.secret, _this.size),
             'info_href': util.format("http://flic.kr/p/%s", Base58.encode(p.id)),
             'geohash': ngeohash.encode(p.latitude, p.longitude),
@@ -73,7 +74,6 @@
           };
         });
       } else {
-        console.dir(flickrSearchJson);
         return {};
       }
     };

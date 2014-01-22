@@ -9,9 +9,10 @@ class Application
     }
     @model.navigation.subscribe(@_assignImagesToNavigation)
     @model.images.subscribe(@_assignImagesToNavigation)
+    @usedImgIds = {}
 
   run: () =>
-    @_fetchImages()
+    @_fetchImages(true)
     @_fetchNavigation()
 
   _assignImagesToNavigation: () =>
@@ -28,18 +29,46 @@ class Application
             .take(@perGeoHashLimit)
             .value())
 
-  _fetchImages: () =>
-    uri = URI(@imagesPath).absoluteTo(@baseURI).toString()
+  _fetchImages: (fetchRelated = false, imagesPath = @imagesPath) =>
+    uri = URI(imagesPath).absoluteTo(@baseURI).toString()
     console.log("Fetching: %s", uri)
     $.getJSON(uri, (data, status) =>
       console.dir(data)
       console.dir(status)
       if status == "success" && data.images?
+        console.log("Fetched: %s", uri)
         console.dir(data.images)
-        @model.images(_.first(data.images, @limit))
+        current = @model.images()
+        unique = @_uniqueImages(data.images)
+        console.log("Unique:")
+        console.dir(unique)
+        expanded =
+          if unique.length > 0
+            _.first(current.concat(unique), @limit)
+          else
+            current
+        @_recordUsed(unique)
+        @model.images(expanded)
+        if fetchRelated && data.related?
+          console.log("Fetching related")
+          for related in data.related
+            @_fetchImages(false, related.href)
+          @_fetchImages(false, data.related[0].href)
       else
         console.log("Failed to fetch: %s", uri)
     )
+
+  _uniqueImages: (images) =>
+    if images? and images.length > 0
+#      images
+      _.filter(images, (i) => not (@usedImgIds[i.img_id]))
+    else
+      []
+
+  _recordUsed: (images) =>
+    for image in images
+      if image.img_id?
+        @usedImgIds[image.img_id] = true
 
   _fetchNavigation: () =>
     uri = URI(@navigationPath).absoluteTo(@baseURI).toString()

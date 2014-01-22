@@ -25,7 +25,7 @@
     }
 
     Application.prototype.run = function() {
-      this._fetchImages();
+      this._fetchImages(true);
       return this._fetchNavigation();
     };
 
@@ -56,17 +56,35 @@
       }
     };
 
-    Application.prototype._fetchImages = function() {
+    Application.prototype._fetchImages = function(fetchRelated, imagesPath) {
       var uri,
         _this = this;
-      uri = URI(this.imagesPath).absoluteTo(this.baseURI).toString();
+      if (fetchRelated == null) {
+        fetchRelated = false;
+      }
+      if (imagesPath == null) {
+        imagesPath = this.imagesPath;
+      }
+      uri = URI(imagesPath).absoluteTo(this.baseURI).toString();
       console.log("Fetching: %s", uri);
       return $.getJSON(uri, function(data, status) {
+        var current, expanded, related, _i, _len, _ref;
         console.dir(data);
         console.dir(status);
         if (status === "success" && (data.images != null)) {
           console.dir(data.images);
-          return _this.model.images(_.first(data.images, _this.limit));
+          current = _this.model.images();
+          expanded = data.images.length > 0 ? _.first(current.concat(data.images), _this.limit) : current;
+          _this.model.images(expanded);
+          if (fetchRelated && (data.related != null)) {
+            console.log("Fetching related");
+            _ref = data.related;
+            for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+              related = _ref[_i];
+              _this._fetchImages(false, related.href);
+            }
+            return _this._fetchImages(false, data.related[0].href);
+          }
         } else {
           return console.log("Failed to fetch: %s", uri);
         }

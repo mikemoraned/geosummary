@@ -1,5 +1,6 @@
 express = require("express")
 logfmt = require("logfmt")
+_ = require("underscore")._
 app = express()
 
 app.use(logfmt.requestLogger())
@@ -75,13 +76,19 @@ imageFinder = new FlickrImageFinder(process.env['FLICKR_API_KEY'], "s")
 
 handleImages = (req, resp) ->
   geohash = geohashFromRequest(req)
+  related = _.map(navigation.hashesBelow(geohash), (below) -> {
+    name: below
+    href: "/#{below}/images"
+  })
   imageFinder.findImages(geohash,
   (result) =>
+    console.dir(result)
     secondsExpiry = 24 * 60 * 60
     resp.setHeader "Cache-Control", "public, max-age=#{secondsExpiry}"
     resp.setHeader "Expires", new Date(Date.now() + (secondsExpiry * 1000)).toUTCString()
     resp.send({
-      'geohash' : geohash,
+      'geohash' : geohash
+      'related' : related
       'images' : result
     })
   ,

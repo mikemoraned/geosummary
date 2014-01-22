@@ -11,7 +11,7 @@ class Application
     @model.images.subscribe(@_assignImagesToNavigation)
 
   run: () =>
-    @_fetchImages()
+    @_fetchImages(true)
     @_fetchNavigation()
 
   _assignImagesToNavigation: () =>
@@ -28,15 +28,26 @@ class Application
             .take(@perGeoHashLimit)
             .value())
 
-  _fetchImages: () =>
-    uri = URI(@imagesPath).absoluteTo(@baseURI).toString()
+  _fetchImages: (fetchRelated = false, imagesPath = @imagesPath) =>
+    uri = URI(imagesPath).absoluteTo(@baseURI).toString()
     console.log("Fetching: %s", uri)
     $.getJSON(uri, (data, status) =>
       console.dir(data)
       console.dir(status)
       if status == "success" && data.images?
         console.dir(data.images)
-        @model.images(_.first(data.images, @limit))
+        current = @model.images()
+        expanded =
+          if data.images.length > 0
+            _.first(current.concat(data.images), @limit)
+          else
+            current
+        @model.images(expanded)
+        if fetchRelated && data.related?
+          console.log("Fetching related")
+          for related in data.related
+            @_fetchImages(false, related.href)
+          @_fetchImages(false, data.related[0].href)
       else
         console.log("Failed to fetch: %s", uri)
     )

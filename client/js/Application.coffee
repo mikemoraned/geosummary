@@ -9,6 +9,7 @@ class Application
     }
     @model.navigation.subscribe(@_assignImagesToNavigation)
     @model.images.subscribe(@_assignImagesToNavigation)
+    @usedImgIds = {}
 
   run: () =>
     @_fetchImages(true)
@@ -35,13 +36,18 @@ class Application
       console.dir(data)
       console.dir(status)
       if status == "success" && data.images?
+        console.log("Fetched: %s", uri)
         console.dir(data.images)
         current = @model.images()
+        unique = @_uniqueImages(data.images)
+        console.log("Unique:")
+        console.dir(unique)
         expanded =
-          if data.images.length > 0
-            _.first(current.concat(data.images), @limit)
+          if unique.length > 0
+            _.first(current.concat(unique), @limit)
           else
             current
+        @_recordUsed(unique)
         @model.images(expanded)
         if fetchRelated && data.related?
           console.log("Fetching related")
@@ -51,6 +57,18 @@ class Application
       else
         console.log("Failed to fetch: %s", uri)
     )
+
+  _uniqueImages: (images) =>
+    if images? and images.length > 0
+#      images
+      _.filter(images, (i) => not (@usedImgIds[i.img_id]))
+    else
+      []
+
+  _recordUsed: (images) =>
+    for image in images
+      if image.img_id?
+        @usedImgIds[image.img_id] = true
 
   _fetchNavigation: () =>
     uri = URI(@navigationPath).absoluteTo(@baseURI).toString()

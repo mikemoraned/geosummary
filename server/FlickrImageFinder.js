@@ -62,6 +62,7 @@
         console.log("Num results returned: " + flickrSearchJson.photos.photo.length);
         return _.map(flickrSearchJson.photos.photo, function(p) {
           return {
+            'img_id': p.id,
             'img_href': util.format("http://farm%s.staticflickr.com/%s/%s_%s_%s.jpg", p.farm, p.server, p.id, p.secret, _this.size),
             'info_href': util.format("http://flic.kr/p/%s", Base58.encode(p.id)),
             'geohash': ngeohash.encode(p.latitude, p.longitude),

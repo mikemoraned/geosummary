@@ -11,6 +11,8 @@
       this.limit = limit;
       this.perGeoHashLimit = perGeoHashLimit;
       this._fetchNavigation = __bind(this._fetchNavigation, this);
+      this._recordUsed = __bind(this._recordUsed, this);
+      this._uniqueImages = __bind(this._uniqueImages, this);
       this._fetchImages = __bind(this._fetchImages, this);
       this._assignImagesToNavigation = __bind(this._assignImagesToNavigation, this);
       this.run = __bind(this.run, this);
@@ -22,6 +24,7 @@
       };
       this.model.navigation.subscribe(this._assignImagesToNavigation);
       this.model.images.subscribe(this._assignImagesToNavigation);
+      this.usedImgIds = {};
     }
 
     Application.prototype.run = function() {
@@ -68,13 +71,18 @@
       uri = URI(imagesPath).absoluteTo(this.baseURI).toString();
       console.log("Fetching: %s", uri);
       return $.getJSON(uri, function(data, status) {
-        var current, expanded, related, _i, _len, _ref;
+        var current, expanded, related, unique, _i, _len, _ref;
         console.dir(data);
         console.dir(status);
         if (status === "success" && (data.images != null)) {
+          console.log("Fetched: %s", uri);
           console.dir(data.images);
           current = _this.model.images();
-          expanded = data.images.length > 0 ? _.first(current.concat(data.images), _this.limit) : current;
+          unique = _this._uniqueImages(data.images);
+          console.log("Unique:");
+          console.dir(unique);
+          expanded = unique.length > 0 ? _.first(current.concat(unique), _this.limit) : current;
+          _this._recordUsed(unique);
           _this.model.images(expanded);
           if (fetchRelated && (data.related != null)) {
             console.log("Fetching related");
@@ -89,6 +97,31 @@
           return console.log("Failed to fetch: %s", uri);
         }
       });
+    };
+
+    Application.prototype._uniqueImages = function(images) {
+      var _this = this;
+      if ((images != null) && images.length > 0) {
+        return _.filter(images, function(i) {
+          return !_this.usedImgIds[i.img_id];
+        });
+      } else {
+        return [];
+      }
+    };
+
+    Application.prototype._recordUsed = function(images) {
+      var image, _i, _len, _results;
+      _results = [];
+      for (_i = 0, _len = images.length; _i < _len; _i++) {
+        image = images[_i];
+        if (image.img_id != null) {
+          _results.push(this.usedImgIds[image.img_id] = true);
+        } else {
+          _results.push(void 0);
+        }
+      }
+      return _results;
     };
 
     Application.prototype._fetchNavigation = function() {

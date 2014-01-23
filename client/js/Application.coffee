@@ -81,8 +81,12 @@ class Application
         mapped = ko.mapping.fromJS(data.navigation)
         for rows in mapped.descend.values()
           for value in rows
-            value.images = ko.observableArray([])
-            value.loaded = ko.observable(false)
+            do (value) =>
+              value.images = ko.observableArray([])
+              value.loaded = ko.observable(false)
+              value.navigable = ko.computed(() =>
+                value.loaded() && value.images().length > 0
+              )
         @model.navigation(mapped)
       else
         console.log("Failed to fetch: %s", uri)

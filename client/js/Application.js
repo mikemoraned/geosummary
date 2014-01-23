@@ -130,7 +130,7 @@
       uri = URI(this.navigationPath).absoluteTo(this.baseURI).toString();
       console.log("Fetching: %s", uri);
       return $.getJSON(uri, function(data, status) {
-        var mapped, rows, value, _i, _j, _len, _len1, _ref;
+        var mapped, rows, value, _fn, _i, _j, _len, _len1, _ref;
         console.dir(data);
         console.dir(status);
         if (status === "success" && (data.navigation != null)) {
@@ -139,10 +139,16 @@
           _ref = mapped.descend.values();
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             rows = _ref[_i];
-            for (_j = 0, _len1 = rows.length; _j < _len1; _j++) {
-              value = rows[_j];
+            _fn = function(value) {
               value.images = ko.observableArray([]);
               value.loaded = ko.observable(false);
+              return value.navigable = ko.computed(function() {
+                return value.loaded() && value.images().length > 0;
+              });
+            };
+            for (_j = 0, _len1 = rows.length; _j < _len1; _j++) {
+              value = rows[_j];
+              _fn(value);
             }
           }
           return _this.model.navigation(mapped);

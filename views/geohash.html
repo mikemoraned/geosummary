@@ -33,7 +33,7 @@
 
     .navigation .item {
         float: left;
-        height: 100px;
+        height: 100%;
     }
 
     .navigation .item.loading {
@@ -90,6 +90,15 @@
             height: 40px;
         }
     }
+
+    div.item:hover {
+        background-color: rgba(225, 225, 225, .5);
+        border-radius: 10px;
+    }
+
+    div.item.navigable {
+        cursor: pointer;
+    }
 </style>
 
 <div id="about">
@@ -105,11 +114,11 @@
 <div class="navigation" data-bind="with: navigation, visible: navigation" style="display: none">
     <div class="rows" data-bind="foreach: descend.values, css: { height8: descend.values().length == 8, height4: descend.values().length == 4 }">
         <div class="row" data-bind="foreach: $data, css: { width8: $data.length == 8, width4: $data.length == 4 }">
-           <div class="item" data-bind="css: { loading: !loaded() }">
-               <div data-bind="if: loaded() && images().length > 0">
+           <div class="item" data-bind="css: { loaded: loaded(), loading: !loaded(), navigable: navigable() }">
+               <div data-bind="if: navigable()">
                    <a class="hash" data-bind="attr: { href: href }, text: name"></a>
                </div>
-               <div data-bind="if: images().length === 0">
+               <div data-bind="if: (!loaded() || !navigable())">
                    <span data-bind="text: name"></span>
                </div>
                <div class="images" data-bind="foreach: images">
@@ -133,6 +142,12 @@
         var app = new Application(window.location.href, "images", "navigation", 100000, 2);
         ko.applyBindings(app.model);
         new MapBackground("background", app.model.navigation);
+
+        $(".navigation").on('click','div.item', function() {
+            if (ko.dataFor(this).navigable()) {
+                window.location = ko.dataFor(this).href();
+            }
+        });
 
         app.run();
     });

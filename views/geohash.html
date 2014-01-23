@@ -53,10 +53,18 @@
         width: 100%;
     }
 
-    div#background {
+    div#background-wrapper {
         position: absolute;
         top: 0;
         z-index: -1;
+        width: 99%;
+        height: 99%;
+        overflow: hidden;
+    }
+
+    div#background {
+        position: absolute;
+        top: 0;
         /*background-color: blue;*/
         width: 100%;
         min-height: 100%;
@@ -81,8 +89,10 @@
     <a href="/about">About</a>
 </div>
 
-<div id="background">
+<div id="background-wrapper">
+    <div id="background">
 
+    </div>
 </div>
 
 <div class="navigation" data-bind="with: navigation, visible: navigation" style="display: none">

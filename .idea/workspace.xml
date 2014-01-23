@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3a6d0dc2-d409-4b1a-8ad7-47c9f7c22a30" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/geohash.html" afterPath="$PROJECT_DIR$/views/geohash.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="geosummary.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +30,7 @@
       <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="20" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="645">
+            <state line="3" column="20" selection-start="77" selection-end="77" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="645">
               <folding />
             </state>
           </provider>
@@ -46,7 +48,7 @@
       <file leaf-file-name="geohash.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/geohash.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="19" selection-start="1548" selection-end="1548" vertical-scroll-proportion="0.8562874" vertical-offset="485" max-vertical-offset="1905">
+            <state line="66" column="15" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.5868263" vertical-offset="500" max-vertical-offset="2055">
               <folding />
             </state>
           </provider>
@@ -109,7 +111,7 @@
       <file leaf-file-name="FlickrImageFinder.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/FlickrImageFinder.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="15" selection-start="1683" selection-end="1683" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1155">
+            <state line="56" column="15" selection-start="1683" selection-end="1683" vertical-scroll-proportion="0.0" vertical-offset="840" max-vertical-offset="1155">
               <folding />
             </state>
           </provider>
@@ -144,10 +146,10 @@
         <option value="$PROJECT_DIR$/server/Navigation.coffee" />
         <option value="$PROJECT_DIR$/views/crawl.html" />
         <option value="$PROJECT_DIR$/views/index.html" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/web.coffee" />
         <option value="$PROJECT_DIR$/server/FlickrImageFinder.coffee" />
         <option value="$PROJECT_DIR$/client/js/Application.coffee" />
+        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/views/geohash.html" />
       </list>
     </option>
@@ -184,6 +186,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -300,7 +303,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -310,8 +312,8 @@
     <property name="last_opened_file_path" value="$USER_HOME$/WorkingArea/bieber" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -323,6 +325,14 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -333,23 +343,15 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -474,13 +476,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="20" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="645">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="84" column="22" selection-start="2008" selection-end="2008" vertical-scroll-proportion="0.0" vertical-offset="911" max-vertical-offset="1785">
@@ -502,9 +497,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="20" selection-start="77" selection-end="77" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="645">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/geohash.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="19" selection-start="1548" selection-end="1548" vertical-scroll-proportion="0.8562874" vertical-offset="485" max-vertical-offset="1905">
+        <state line="66" column="15" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.5868263" vertical-offset="500" max-vertical-offset="2055">
           <folding />
         </state>
       </provider>

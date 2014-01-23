@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <style type="text/css">
+        div.indicator {
+           width: 100px;
+           height: 100px;
+        }
+
+        @media all {
+            div.indicator {
+                background-color: green;
+            }
+            img.flickr {
+                border: 1px solid green;
+            }
+        }
+
+        @media screen and (min-width : 1200px) {
+            div.indicator {
+                background-color: blue;
+            }
+        }
+
+        @media only screen
+        and (min-width : 768px)
+        and (max-width : 1024px) {
+            div.indicator {
+                background-color: red;
+            }
+            img.flickr {
+                border: 5px solid red;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="indicator">
+
+    </div>
+    <!--<img class="flickr s" src="http://farm9.staticflickr.com/8240/8473787934_cd8531e273_s.jpg" />-->
+    <!--<img class="flickr t" src="http://farm9.staticflickr.com/8240/8473787934_cd8531e273_t.jpg" />-->
+    <!--<img class="flickr m" src="http://farm9.staticflickr.com/8240/8473787934_cd8531e273_m.jpg" />-->
+    <!--<img class="flickr z" src="http://farm9.staticflickr.com/8240/8473787934_cd8531e273_z.jpg" />-->
+    <!--<img class="flickr b" src="http://farm9.staticflickr.com/8240/8473787934_cd8531e273_b.jpg" />-->
+</body>
+</html>

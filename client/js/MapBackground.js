@@ -14,7 +14,7 @@
     }
 
     MapBackground.prototype._navigationChanged = function() {
-      var bbox, bounds, northEast, southWest;
+      var bbox, bounds, northEast, southWest, stamenLayer;
       if ((this.navigation() != null) && (this.map == null)) {
         console.dir(this.navigation());
         bbox = this.navigation().descend.geo_bbox();
@@ -25,10 +25,8 @@
           zoomControl: false
         });
         this.map.fitBounds(bounds);
-        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution: 'Map data © OpenStreetMap contributors',
-          maxZoom: 18
-        }).addTo(this.map);
+        stamenLayer = new L.StamenTileLayer("toner-lite");
+        this.map.addLayer(stamenLayer);
         return this._transform(southWest, northEast);
       }
     };

@@ -13,10 +13,13 @@ class MapBackground
       bounds = L.latLngBounds(southWest, northEast)
       @map = L.map(@selector, { zoomControl:false })
       @map.fitBounds(bounds)
-      L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: 'Map data © OpenStreetMap contributors',
-        maxZoom: 18
-      }).addTo(@map)
+#      L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+#        attribution: 'Map data © OpenStreetMap contributors',
+#        maxZoom: 18
+#      }).addTo(@map)
+
+      stamenLayer = new L.StamenTileLayer("toner-lite")
+      @map.addLayer(stamenLayer)
 
 #      boundsRect = L.rectangle(bounds, {color: "#ff7800", weight: 1})
 #      boundsRect.addTo(@map)

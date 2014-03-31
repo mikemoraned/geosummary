@@ -1,7 +1,7 @@
 {
   "name": "geosummary",
   "description": "geosummary",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "private": true,
   "dependencies": {
     "express": "3.x",

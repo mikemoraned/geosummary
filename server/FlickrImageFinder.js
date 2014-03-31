@@ -44,7 +44,9 @@
     };
 
     FlickrImageFinder.prototype._boundingBox = function(geohash) {
-      return ngeohash.decode_bbox(geohash).join(",");
+      var maxlat, maxlon, minlat, minlon, _ref;
+      _ref = ngeohash.decode_bbox(geohash), minlat = _ref[0], minlon = _ref[1], maxlat = _ref[2], maxlon = _ref[3];
+      return [minlon, minlat, maxlon, maxlat].join(",");
     };
 
     FlickrImageFinder.prototype._parseResponse = function(io, success, error) {
@@ -61,6 +63,7 @@
       if (((_ref = flickrSearchJson.photos) != null ? _ref.photo : void 0) != null) {
         console.log("Num results returned: " + flickrSearchJson.photos.photo.length);
         return _.map(flickrSearchJson.photos.photo, function(p) {
+          console.log("" + p.latitude + " , " + p.longitude + " -> " + (ngeohash.encode(p.latitude, p.longitude)));
           return {
             'img_id': p.id,
             'img_href': util.format("http://farm%s.staticflickr.com/%s/%s_%s_%s.jpg", p.farm, p.server, p.id, p.secret, _this.size),

@@ -22,12 +22,15 @@ class Application
       for rows in @model.navigation().descend.values()
         for value in rows
           value.loaded(true)
-          value.images(_.chain(@model.images())
-            .filter((image) =>
+          images = _.chain(@model.images())
+          .filter((image) =>
+#              console.log("#{image.geohash},#{value.name()}")
               image.geohash.indexOf(value.name()) == 0
             )
-            .take(@perGeoHashLimit)
-            .value())
+          .take(@perGeoHashLimit)
+          .value()
+#          console.log("Adding #{images.length} images")
+          value.images(images)
 
   _fetchImages: (fetchRelated = false, imagesPath = @imagesPath) =>
     uri = URI(imagesPath).absoluteTo(@baseURI).toString()

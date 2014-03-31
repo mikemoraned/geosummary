@@ -35,8 +35,10 @@ class FlickrImageFinder
     )
 
   _boundingBox: (geohash) =>
-    # 50%2C12%2C51%2C13
-    ngeohash.decode_bbox(geohash).join(",")
+    [minlat, minlon, maxlat, maxlon] = ngeohash.decode_bbox(geohash)
+    # flick expects minimum_longitude, minimum_latitude, maximum_longitude, maximum_latitude. (from
+    # bbox docs at https://www.flickr.com/services/api/flickr.photos.search.html)
+    [minlon, minlat, maxlon, maxlat].join(",")
 
   _parseResponse: (io, success, error) =>
     console.log("Will parse response")
@@ -53,6 +55,8 @@ class FlickrImageFinder
     if flickrSearchJson.photos?.photo?
       console.log("Num results returned: #{flickrSearchJson.photos.photo.length}")
       _.map(flickrSearchJson.photos.photo, (p) =>
+        console.log("#{p.latitude} , #{p.longitude} -> #{ngeohash.encode(p.latitude, p.longitude)}")
+
         {
           'img_id' : p.id
           'img_href'  : util.format("http://farm%s.staticflickr.com/%s/%s_%s_%s.jpg", p.farm, p.server, p.id, p.secret, @size)

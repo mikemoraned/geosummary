@@ -33,7 +33,7 @@
     };
 
     Application.prototype._assignImagesToNavigation = function() {
-      var rows, value, _i, _len, _ref, _results;
+      var images, rows, value, _i, _len, _ref, _results;
       console.log("Assigning");
       if (this.model.images().length > 0 && (this.model.navigation() != null)) {
         console.log("We have some " + (this.model.images().length) + " images and navigation");
@@ -48,9 +48,10 @@
             for (_j = 0, _len1 = rows.length; _j < _len1; _j++) {
               value = rows[_j];
               value.loaded(true);
-              _results1.push(value.images(_.chain(this.model.images()).filter(function(image) {
+              images = _.chain(this.model.images()).filter(function(image) {
                 return image.geohash.indexOf(value.name()) === 0;
-              }).take(this.perGeoHashLimit).value()));
+              }).take(this.perGeoHashLimit).value();
+              _results1.push(value.images(images));
             }
             return _results1;
           }).call(this));
